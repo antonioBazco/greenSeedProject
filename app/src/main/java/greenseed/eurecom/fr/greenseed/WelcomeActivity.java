@@ -35,4 +35,8 @@ public class WelcomeActivity extends Activity {
             }
         });
     }
+    public void testFunc(View v){
+        Button button = (Button) v;
+        ((Button) v).setText("clicked");
+    }
 }

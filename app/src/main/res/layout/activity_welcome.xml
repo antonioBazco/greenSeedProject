@@ -62,4 +62,15 @@
         android:text="@string/slogan"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:id="@+id/buttonTest"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="testFunc"/>
+
 </RelativeLayout>
