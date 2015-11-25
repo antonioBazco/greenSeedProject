@@ -22,7 +22,7 @@ public class WelcomeActivity extends Activity {
         loginButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Starts an intent of the log in activity
-                //startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
+                startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
             }
         });
 
@@ -31,7 +31,7 @@ public class WelcomeActivity extends Activity {
         signupButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Starts an intent for the sign up activity
-                //startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
+                startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
             }
         });
     }
