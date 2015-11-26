@@ -35,8 +35,7 @@ public class WelcomeActivity extends Activity {
             }
         });
     }
-    public void testFunc(View v){
-        Button button = (Button) v;
-        ((Button) v).setText("clicked");
+    public void goToAnimActivity(View v){
+        startActivity(new Intent(WelcomeActivity.this, AnimActivity.class));
     }
 }

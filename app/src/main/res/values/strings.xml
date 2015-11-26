@@ -10,6 +10,10 @@
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="sun">sun</string>
+    <string name="cloud">cloud</string>
+    <string name="pot">pot</string>
+    <string name="flower">flower</string>
 
 
     <!--<string name="title_activity_settings">Settings</string>-->
