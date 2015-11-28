@@ -14,6 +14,7 @@
     <string name="cloud">cloud</string>
     <string name="pot">pot</string>
     <string name="flower">flower</string>
+    <string name="title_activity_project_list">ProjectListActivity</string>
 
 
     <!--<string name="title_activity_settings">Settings</string>-->
