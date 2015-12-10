@@ -5,7 +5,7 @@
     android:ordering="together" >
 
     <objectAnimator
-        android:duration="20000"
+        android:duration="40000"
         android:startOffset="1"
         android:propertyName="x"
         android:repeatCount="infinite"
@@ -14,12 +14,31 @@
         android:valueType="floatType" />
 
     <objectAnimator
-        android:duration="6000"
+        android:propertyYName="cloudY"
+        android:duration="12000"
         android:startOffset="1"
         android:propertyName="y"
         android:repeatCount="infinite"
         android:repeatMode="reverse"
-        android:valueTo="70dp"
+        android:valueTo="90dp"
+        android:valueType="floatType" />
+
+    <objectAnimator
+        android:duration="12000"
+        android:propertyName="scaleX"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:valueFrom="1.2"
+        android:valueTo="1"
+        android:valueType="floatType" />
+
+    <objectAnimator
+        android:duration="12000"
+        android:propertyName="scaleY"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:valueFrom="1.2"
+        android:valueTo="1"
         android:valueType="floatType" />
 
 </set>

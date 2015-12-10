@@ -17,4 +17,7 @@ public class MainActivity extends Activity {
         startActivity(new Intent(MainActivity.this, DonationListActivity.class));
     }
 
+    public void goToAnimActivity(View v){
+        startActivity(new Intent(MainActivity.this, AnimActivity.class));
+    }
 }
