@@ -12,6 +12,6 @@ public class Project extends ParseObject{
     }
 
     public String getName(){
-        return getString("matter");
+        return getString("projectName");
     }
 }
