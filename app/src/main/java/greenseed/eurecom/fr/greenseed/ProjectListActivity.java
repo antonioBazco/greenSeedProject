@@ -102,6 +102,9 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
                             ParseUser user = ParseUser.getCurrentUser();
                             // Saving the payment in the user profile in database
                             List userPayments = user.getList("payments");
+                            if (userPayments == null) {
+                                userPayments = new ArrayList();
+                            }
                             userPayments.add(ParseObject.createWithoutData("payments", payment.getObjectId()));
                             user.put("payments",userPayments);
 
