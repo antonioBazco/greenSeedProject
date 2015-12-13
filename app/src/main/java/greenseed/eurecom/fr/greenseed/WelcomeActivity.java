@@ -35,7 +35,5 @@ public class WelcomeActivity extends Activity {
             }
         });
     }
-    public void goToAnimActivity(View v){
-        startActivity(new Intent(WelcomeActivity.this, AnimActivity.class));
-    }
+
 }

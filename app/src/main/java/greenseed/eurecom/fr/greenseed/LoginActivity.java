@@ -97,9 +97,9 @@ public class LoginActivity extends Activity {
                 } else {
                     // Start an intent for the dispatch activity
                     Toast.makeText(LoginActivity.this, "Welcome to a best future", Toast.LENGTH_LONG).show();
-//                    Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
-//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                    startActivity(intent);
+                    Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }
             }
         });

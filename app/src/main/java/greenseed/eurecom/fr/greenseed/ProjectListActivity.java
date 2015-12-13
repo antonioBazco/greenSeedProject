@@ -15,17 +15,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ProjectListActivity extends AppCompatActivity  implements AdapterView.OnItemClickListener {
 
     private ListView mListView;
     private ProjectAdapter mProjectAdapter;
+    public Project project;
+    private ParseObject payment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +39,7 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
 
         ParseObject.registerSubclass(Organization.class);
         ParseObject.registerSubclass(Project.class);
+        ParseObject.registerSubclass(Payments.class);
 
         mProjectAdapter = new ProjectAdapter(this, new ArrayList<Project>());
 
@@ -64,9 +71,11 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        project = mProjectAdapter.getItem(position);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("Type quantity");
+        builder.setTitle("Type quantity (€)");
 
         // Set up the input
         final EditText input = new EditText(this);
@@ -79,8 +88,38 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //String m_Text = input.getText().toString();
-                Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(ProjectListActivity.this, MainActivity.class));
+                // Saving the payment in the database
+                payment = new ParseObject("Payment");
+
+                payment.put("value", Integer.parseInt(input.getText().toString()));
+                payment.put("matter", project.get("matter"));
+                payment.put("date", new Date());
+                payment.put("project", ParseObject.createWithoutData("Project", project.getObjectId()));
+
+                payment.saveInBackground(new SaveCallback() {
+                    public void done(ParseException e) {
+                        if (e == null) {
+                            ParseUser user = ParseUser.getCurrentUser();
+                            // Saving the payment in the user profile in database
+                            List userPayments = user.getList("payments");
+                            userPayments.add(ParseObject.createWithoutData("payments", payment.getObjectId()));
+                            user.put("payments",userPayments);
+
+                            user.saveInBackground(new SaveCallback() {
+                                public void done(ParseException e) {
+                                    if (e == null) {
+                                        Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(ProjectListActivity.this, MainActivity.class));
+                                    } else {
+                                        Toast.makeText(ProjectListActivity.this, "Payment canceled due to an error", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                        } else {
+                            Toast.makeText(ProjectListActivity.this, "Payment canceled due to an error", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
