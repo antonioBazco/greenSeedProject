@@ -79,6 +79,9 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //String m_Text = input.getText().toString();
+                
+
+
                 Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(ProjectListActivity.this, MainActivity.class));
             }
