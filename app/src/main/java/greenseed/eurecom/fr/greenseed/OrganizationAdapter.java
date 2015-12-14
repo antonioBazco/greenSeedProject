@@ -3,11 +3,18 @@ package greenseed.eurecom.fr.greenseed;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.parse.GetDataCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
 
 /**
  * Created by Eva on 28/11/2015.
@@ -33,6 +40,20 @@ public class OrganizationAdapter extends ArrayAdapter<Organization> {
         TextView descriptionView = (TextView) convertView.findViewById(R.id.organization_description);
 
         descriptionView.setText(organization.getName());
+
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.org_pic);
+        ParseFile imageFile = organization.getImage();
+        byte[] bitmapdata = new byte[0];
+        try {
+            bitmapdata = imageFile.getData();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
+        imageView.setImageBitmap(bitmap);
+
+        ImageView imageViewInfo = (ImageView) convertView.findViewById(R.id.info_pic);
+        imageViewInfo.setTag(position);
 
         return convertView;
     }

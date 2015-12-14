@@ -112,7 +112,9 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
                                 public void done(ParseException e) {
                                     if (e == null) {
                                         Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(ProjectListActivity.this, MainActivity.class));
+                                        Intent myIntent = new Intent(ProjectListActivity.this, AnimActivity.class);
+                                        myIntent.putExtra("addSeed", "addOneSeed");
+                                        startActivity(myIntent);
                                     } else {
                                         Toast.makeText(ProjectListActivity.this, "Payment canceled due to an error", Toast.LENGTH_LONG).show();
                                     }
