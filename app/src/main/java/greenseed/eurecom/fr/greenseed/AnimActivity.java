@@ -20,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ParseUser;
+
 import java.util.Calendar;
 
 public class AnimActivity extends AppCompatActivity {
@@ -45,21 +47,20 @@ public class AnimActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent myIntent = getIntent(); // gets the previously created intent
         String addSeed = myIntent.getStringExtra("addSeed"); // will return "FirstKeyValue"
-
         setContentView(R.layout.activity_anim);
 
         // find current minute of day to set animation offset
         Calendar CurrentDateTime = Calendar.getInstance();
         int hours = CurrentDateTime.get(Calendar.HOUR_OF_DAY);
         int minutes = hours * 60 + CurrentDateTime.get(Calendar.MINUTE);
-        float startOffset = (float)minutes / (60*24);
+        float startOffset = (float) minutes / (60 * 24);
 
-        Log.d("OFFSET: ", String.valueOf(-(long)(startOffset * 60000)));
+        Log.d("OFFSET: ", String.valueOf(-(long) (startOffset * 60000)));
 
         // sun animation configuration
         ImageView sun = (ImageView) findViewById(R.id.sun);
         sunAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.sun_movement);
-        sunAnimatorSet.setStartDelay(-(long)(startOffset*60000));
+        sunAnimatorSet.setStartDelay(-(long) (startOffset * 60000));
         sunAnimatorSet.setTarget(sun);
         /***************************/
 
@@ -108,8 +109,11 @@ public class AnimActivity extends AppCompatActivity {
         groundAnimator.start();
         //flowerAnimatorSet.start(); //is started in seed drag
 
-        if(addSeed.equals("addOneSeed")) {
-            flowerAnimatorSet.start();
+        if (addSeed != null)
+        {
+            if (addSeed.equals("addOneSeed")) {
+                flowerAnimatorSet.start();
+            }
         }
         skyAnimator.addUpdateListener(
 
@@ -278,5 +282,17 @@ public class AnimActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+    public void goToDonate(View v){
+        startActivity(new Intent(AnimActivity.this, DonationListActivity.class));
+    }
+
+    public void logOut(View v){
+        // Call the Parse log out method
+        ParseUser.logOut();
+        // Start and intent for the dispatch activity
+        Intent intent = new Intent(AnimActivity.this, DispatchActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
