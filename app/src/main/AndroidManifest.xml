@@ -38,7 +38,10 @@
         <activity
             android:name=".AnimActivity"
             android:label="AnimActivity" />
-        <activity android:name=".DonationListActivity" />
+        <activity
+            android:name=".DonationListActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
         <activity
             android:name=".ProjectListActivity"
             android:label="@string/title_activity_project_list"

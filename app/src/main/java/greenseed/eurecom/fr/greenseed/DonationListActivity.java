@@ -1,8 +1,12 @@
 package greenseed.eurecom.fr.greenseed;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,9 +17,11 @@ import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +29,7 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
 
     private ListView mListView;
     private OrganizationAdapter mAdapter;
+    EditText orgSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +42,28 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
         mListView = (ListView) findViewById(R.id.organization_list);
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(this);
+        mListView.setTextFilterEnabled(true);
 
+        orgSearch = (EditText) findViewById(R.id.organization_input);
+        orgSearch.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+                DonationListActivity.this.mAdapter.getFilter().filter(cs);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                                          int arg3) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable arg0) {
+
+            }
+        });
         updateData();
     }
 
@@ -66,7 +94,40 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
         finish();
     }
 
-    public void searchOrg() {
+    public void searchOrg(View view) {
         Toast.makeText(DonationListActivity.this, "Not implemented yet", Toast.LENGTH_LONG).show();
+    }
+
+    public void showOrgInfo(View view) {
+        Object position = view.getTag();
+        System.out.println(position);
+        Organization organization = mAdapter.getItem((int) position);
+        String name = organization.getName();
+        ParseFile infoOrg = organization.getInfo();
+        byte[] infoData = new byte[0];
+        try {
+            infoData = infoOrg.getData();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String info = new String(infoData);
+        openOptionsHelpDialog(name, info);
+    }
+
+    private void openOptionsHelpDialog(String name, String info)
+    {
+        new AlertDialog.Builder(this)
+                .setTitle(name).setMessage(info)
+                .setPositiveButton("Ok",
+                        new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+
+                            }
+                        }
+                )
+                .show();
     }
 }
