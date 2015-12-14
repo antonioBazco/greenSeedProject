@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -132,17 +133,14 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
                             user.saveInBackground(new SaveCallback() {
                                 public void done(ParseException e) {
                                     if (e == null) {
-                                        Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
-                                        Intent myIntent = new Intent(ProjectListActivity.this, AnimActivity.class);
-                                        myIntent.putExtra("addSeed", "addOneSeed");
-                                        startActivity(myIntent);
+                                        paymentRegisteredInDatabase();
                                     } else {
-                                        Toast.makeText(ProjectListActivity.this, "Payment canceled due to an error", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(ProjectListActivity.this, getString(R.string.payment_error), Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
                         } else {
-                            Toast.makeText(ProjectListActivity.this, "Payment canceled due to an error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(ProjectListActivity.this, getString(R.string.payment_error), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -156,10 +154,43 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
                         dialog.cancel();
                     }
                 }
-
         );
         builder.show();
     }
 
+    public void paymentRegisteredInDatabase() {
 
+        String name = getString(R.string.donation_confirmation);
+
+        String info = getString(R.string.sharing_question_1) +  payment.get("value") + getString(R.string.sharing_question_2);
+
+        openOptionsHelpDialog(name, info);
+    }
+
+    private void openOptionsHelpDialog(String name, String info)
+    {
+        new AlertDialog.Builder(this)
+                .setTitle(name).setMessage(info)
+                .setPositiveButton("Share",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent myIntent = new Intent(ProjectListActivity.this, ShareOnFacebook.class);
+                                startActivity(myIntent);
+                            }
+                        }
+                )
+                .setNegativeButton("Not share",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
+                                Intent myIntent = new Intent(ProjectListActivity.this, AnimActivity.class);
+                                myIntent.putExtra("addSeed", "addOneSeed");
+                                startActivity(myIntent);
+                            }
+                        }
+                )
+                .show();
+    }
 }

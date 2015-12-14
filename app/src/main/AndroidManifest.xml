@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="greenseed.eurecom.fr.greenseed">
+    package="greenseed.eurecom.fr.greenseed" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,7 +11,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".WelcomeActivity"
             android:label="@string/app_name"
@@ -25,7 +25,7 @@
             android:label="@string/title_activity_login" />
         <activity
             android:name=".DispatchActivity"
-            android:noHistory="true">
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,12 +37,17 @@
             android:label="AnimActivity" />
         <activity
             android:name=".DonationListActivity"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".ProjectListActivity"
             android:label="@string/title_activity_project_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShareOnFacebook"
+            android:label="@string/title_activity_share_on_facebook"
+            android:theme="@style/AppTheme.NoActionBar" >>
+        </activity>
     </application>
 
 </manifest>

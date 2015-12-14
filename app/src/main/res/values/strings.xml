@@ -15,7 +15,12 @@
     <string name="pot">pot</string>
     <string name="flower">flower</string>
     <string name="title_activity_project_list">ProjectListActivity</string>
+    <string name="title_activity_share_on_facebook">ShareOnFacebook</string>
     <string name="seed">seed</string>
+    <string name="donation_confirmation">Donation done</string>
+    <string name="sharing_question_1">Your contribution of\u0020</string>
+    <string name="sharing_question_2"> \u0020 € has seed a better future.""\n\nDo you want to share it on Faceebook?</string>
+    <string name="payment_error">Payment canceled due to an error</string>
 
     <!--<string name="title_activity_settings">Settings</string>-->
     <!--<string name="search_distance">Search Distance</string>-->
