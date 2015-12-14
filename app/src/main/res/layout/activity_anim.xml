@@ -90,7 +90,29 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="40dp" />
 
-    <Button
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:src="@mipmap/ic_donate"
+        android:onClick="goToDonate"
+        android:layout_below="@+id/cloud1"
+        android:layout_alignLeft="@+id/buttonLogOut"
+        android:layout_alignStart="@+id/buttonLogOut" />
+
+    <ImageButton
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:id="@+id/buttonLogOut"
+        android:onClick="logOut"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@mipmap/ic_logout" />
+
+    <!--<Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Left"
@@ -114,6 +136,7 @@
         android:id="@+id/buttonRight"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true" />
+    -->
 
 
 </RelativeLayout>
