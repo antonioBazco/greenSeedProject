@@ -5,7 +5,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,9 +33,11 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
     private ListView mListView;
     private ProjectAdapter mProjectAdapter;
     public Project project;
+    EditText orgSearch;
     private ParseObject payment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_list);
 
@@ -50,7 +54,23 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
         mListView = (ListView) findViewById(R.id.project_list);
         mListView.setAdapter(mProjectAdapter);
         mListView.setOnItemClickListener(this);
+        mListView.setTextFilterEnabled(true);
 
+        orgSearch = (EditText) findViewById(R.id.project_input);
+        orgSearch.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+                ProjectListActivity.this.mProjectAdapter.getFilter().filter(cs.toString());
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {}
+
+            @Override
+            public void afterTextChanged(Editable arg0) {}
+        });
 
         ParseQuery innerQuery = new ParseQuery("Organization");
         innerQuery.whereEqualTo("objectId", idOrg);
@@ -71,6 +91,7 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
         project = mProjectAdapter.getItem(position);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -137,12 +158,8 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
                 }
 
         );
-
         builder.show();
-
     }
 
-    public void searchPro() {
-        Toast.makeText(ProjectListActivity.this, "Not implemented yet", Toast.LENGTH_LONG).show();
-    }
+
 }

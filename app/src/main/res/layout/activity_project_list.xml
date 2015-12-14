@@ -24,12 +24,13 @@
             <requestFocus />
         </EditText>
 
-        <Button
-            android:id="@+id/search_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="searchPro"
-            android:text="Search" />
+        <!--<Button-->
+            <!--android:id="@+id/search_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:onClick="searchPro"-->
+            <!--android:text="Search" />-->
+
     </LinearLayout>
 
     <ListView

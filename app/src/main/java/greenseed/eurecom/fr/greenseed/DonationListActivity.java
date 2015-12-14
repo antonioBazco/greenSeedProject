@@ -30,6 +30,7 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
     private ListView mListView;
     private OrganizationAdapter mAdapter;
     EditText orgSearch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,18 +51,16 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // When user changed the Text
-                DonationListActivity.this.mAdapter.getFilter().filter(cs);
+                DonationListActivity.this.mAdapter.getFilter().filter(cs.toString());
             }
 
             @Override
             public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
                                           int arg3) {
-
             }
 
             @Override
             public void afterTextChanged(Editable arg0) {
-
             }
         });
         updateData();
@@ -91,11 +90,7 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
         b.putString("key", idOrg); //Your id
         intent.putExtras(b); //Put your id to your next Intent
         startActivity(intent);
-        finish();
-    }
-
-    public void searchOrg(View view) {
-        Toast.makeText(DonationListActivity.this, "Not implemented yet", Toast.LENGTH_LONG).show();
+        //finish();
     }
 
     public void showOrgInfo(View view) {
@@ -122,10 +117,7 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
                         new DialogInterface.OnClickListener() {
 
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-
-                            }
+                            public void onClick(DialogInterface dialog, int which) {}
                         }
                 )
                 .show();
