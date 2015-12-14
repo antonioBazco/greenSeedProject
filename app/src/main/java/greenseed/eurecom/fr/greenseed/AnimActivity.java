@@ -45,7 +45,7 @@ public class AnimActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent myIntent = getIntent(); // gets the previously created intent
         String addSeed = myIntent.getStringExtra("addSeed"); // will return "FirstKeyValue"
-        System.out.println(addSeed);
+
         setContentView(R.layout.activity_anim);
 
         // find current minute of day to set animation offset
@@ -108,7 +108,9 @@ public class AnimActivity extends AppCompatActivity {
         groundAnimator.start();
         //flowerAnimatorSet.start(); //is started in seed drag
 
-
+        if(addSeed.equals("addOneSeed")) {
+            flowerAnimatorSet.start();
+        }
         skyAnimator.addUpdateListener(
 
                 new ValueAnimator.AnimatorUpdateListener() {
