@@ -25,7 +25,9 @@ public class ShareOnFacebook extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         if(v.getId()==R.id.imageButton)
         {
-            String urlToShare = "https://www.google.fr/";
+            String urlToShare = "https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=http://antoniobazco.github.io/&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer";
+            //https://www.facebook.com/dialog/feed?app_id=145634995501895&display=popup&caption=An%20example%20caption&link=http://antoniobazco.github.io/&redirect_uri=http://antoniobazco.github.io/
+
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
 // intent.putExtra(Intent.EXTRA_SUBJECT, "Foo bar"); // NB: has no effect!
@@ -44,7 +46,7 @@ public class ShareOnFacebook extends AppCompatActivity implements View.OnClickLi
 
 // As fallback, launch sharer.php in a browser
             if (!facebookAppFound) {
-                String sharerUrl = "https://www.google.fr/" + urlToShare;
+                String sharerUrl =urlToShare;
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(sharerUrl));
             }
 
