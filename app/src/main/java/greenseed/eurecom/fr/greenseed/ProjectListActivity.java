@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.GetCallback;
+import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -117,7 +118,7 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
                 payment.put("matter", project.get("matter"));
                 payment.put("date", new Date());
                 payment.put("project", ParseObject.createWithoutData("Project", project.getObjectId()));
-
+                //payment.setACL(new ParseACL(ParseUser.getCurrentUser()));
                 payment.saveInBackground(new SaveCallback() {
                     public void done(ParseException e) {
                         if (e == null) {

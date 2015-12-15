@@ -109,12 +109,7 @@ public class AnimActivity extends AppCompatActivity {
         groundAnimator.start();
         //flowerAnimatorSet.start(); //is started in seed drag
 
-        if (addSeed != null)
-        {
-            if (addSeed.equals("addOneSeed")) {
-                flowerAnimatorSet.start();
-            }
-        }
+
         skyAnimator.addUpdateListener(
 
                 new ValueAnimator.AnimatorUpdateListener() {
@@ -156,6 +151,17 @@ public class AnimActivity extends AppCompatActivity {
 
         seedView = (ImageView)findViewById(R.id.seed);
         potView = (ImageView)findViewById(R.id.pot);
+
+        if (addSeed != null)
+        {
+            if (addSeed.equals("addOneSeed")) {
+                seedView.setVisibility(View.VISIBLE);
+            }
+        }
+        else
+        {
+            seedView.setVisibility(View.INVISIBLE);
+        }
 
         seedView.setOnLongClickListener(
                 new View.OnLongClickListener() {
