@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d304f630-7da0-423c-887a-a7b894cd6134" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\Parse-1.11.0\Parse-1.11.0.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\Parse-1.11.0\Parse-1.11.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\Parse-1.11.0\build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\README.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\app.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\allclasses-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\allclasses-noframe.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\AuthenticationCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ConfigCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\CountCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\DeleteCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\FindCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\FunctionCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\GetCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\GetDataCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\GetDataStreamCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\GetFileCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\LocationCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\LogInCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\LogOutCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\Parse.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseACL.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseAnalytics.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseAnonymousUtils.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseClassName.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseCloud.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseConfig.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseException.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseFile.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseGeoPoint.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseInstallation.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseObject.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParsePush.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParsePushBroadcastReceiver.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseQuery.CachePolicy.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseQuery.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseRelation.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseRole.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseSession.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ParseUser.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\ProgressCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\PushService.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\RefreshCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\RequestPasswordResetCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\SaveCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\SendCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\SignUpCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\ParseHttpBody.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\ParseHttpRequest.Builder.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\ParseHttpRequest.Method.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\ParseHttpRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\ParseHttpResponse.Builder.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\ParseHttpResponse.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\ParseNetworkInterceptor.Chain.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\ParseNetworkInterceptor.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\http\package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\com\parse\package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\constant-values.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\deprecated-list.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\help-doc.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\index-all.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\overview-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\overview-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\overview-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\package-list" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\resources\background.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\resources\tab.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\resources\titlebar.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\resources\titlebar_end.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\serialized-form.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0-javadoc\stylesheet.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\libs\Parse-1.11.0.jar.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\proguard-rules.pro" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\androidTest\java\greenseed\eurecom\fr\greenseed\ApplicationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\ic_donate-web.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\ic_info-web.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\ic_launcher-web.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\ic_logout-web.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\AnimActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\Application.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\ConfigHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\DispatchActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\DonationListActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\LoginActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\Organization.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\OrganizationAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\Payments.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\Project.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\ProjectAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\ProjectListActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\ShareOnFacebook.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\SignUpActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\java\greenseed\eurecom\fr\greenseed\WelcomeActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\animator\cloud_movement.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\animator\flower_movement.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\animator\sun_movement.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\drawable\cloud.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\drawable\flower.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\drawable\pot.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\drawable\seed.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\drawable\sharefb.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\drawable\sun.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\drawable\window.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\activity_anim.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\activity_donation_list.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\activity_login.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\activity_project_list.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\activity_share_on_facebook.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\activity_sign_up.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\activity_welcome.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\content_project_list.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\content_share_on_facebook.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\content_sign_up.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\content_welcome.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\organization_row_item.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\layout\project_row_item.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\menu\menu_welcome.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-hdpi\ic_donate.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-hdpi\ic_info.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-hdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-hdpi\ic_logout.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-mdpi\ic_donate.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-mdpi\ic_info.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-mdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-mdpi\ic_logout.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xhdpi\ic_donate.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xhdpi\ic_info.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xhdpi\ic_logout.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xxhdpi\ic_donate.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xxhdpi\ic_info.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xxhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xxhdpi\ic_logout.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xxxhdpi\ic_donate.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xxxhdpi\ic_info.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\mipmap-xxxhdpi\ic_logout.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\values-v21\styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\values-w820dp\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\values\colors.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\values\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\values\strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\values\strings_activity_login.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\main\res\values\styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\app\src\test\java\greenseed\eurecom\fr\greenseed\ExampleUnitTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\gradle.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Antonio\Documents\GitHub\GreenSeed\settings.gradle" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GreenSeed.iml" afterPath="$PROJECT_DIR$/GreenSeed.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    </list>
+    <ignored path="GreenSeed.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="GreenSeed" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="AnimActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/greenSeedProject/app/src/main/java/greenseed/eurecom/fr/greenseed/AnimActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5474061">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="GreenSeed" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="GreenSeed" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'GreenSeed'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'GreenSeed'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'GreenSeed'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'GreenSeed'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'GreenSeed'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'GreenSeed'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'GreenSeed'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="C:\Users\Antonio\Documents\GitHub\GreenSeed" value="2898411987783" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="GreenSeed" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/announce" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/jetty" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/open-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/sonar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/ui" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/src/wrapper" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/ant-1.9.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/ant-launcher-1.9.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-base-services-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-base-services-groovy-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-cli-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-core-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-docs-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-launcher-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-messaging-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-model-core-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-model-groovy-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-native-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-open-api-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-resources-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-tooling-api-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-ui-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/gradle-wrapper-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/groovy-all-2.3.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-announce-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-antlr-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-build-comparison-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-build-init-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-code-quality-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-dependency-management-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-diagnostics-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-ear-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-ide-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-ide-native-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-ivy-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-jacoco-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-javascript-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-jetty-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-language-groovy-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-language-java-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-language-jvm-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-language-native-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-language-scala-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-maven-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-osgi-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-platform-base-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-platform-jvm-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-platform-native-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-platform-play-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-plugin-development-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-plugin-use-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-plugins-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-publish-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-reporting-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-resources-http-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-resources-s3-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-resources-sftp-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-scala-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-signing-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-sonar-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-testing-native-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/gradle-tooling-api-builders-2.4.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/greenSeedProject/app/src/main/java/greenseed/eurecom/fr/greenseed/AnimActivity.java" />
+      </list>
+    </option>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenSeedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenSeedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenSeedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenSeedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GreenSeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenSeedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenseed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eurecom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greenseed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/greenSeedProject" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d304f630-7da0-423c-887a-a7b894cd6134" name="Default" comment="" />
+      <created>1453475307887</created>
+      <option name="number" value="Default" />
+      <updated>1453475307887</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/greenSeedProject/app/src/main/java/greenseed/eurecom/fr/greenseed/AnimActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5474061">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
