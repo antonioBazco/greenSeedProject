@@ -6,7 +6,7 @@
     >
 
     <objectAnimator
-        android:duration="115000"
+        android:duration="110000"
         android:propertyName="scaleX"
         android:valueFrom="0.3"
         android:valueTo="1"
@@ -15,7 +15,7 @@
         android:repeatCount="infinite" />
 
     <objectAnimator
-        android:duration="115000"
+        android:duration="110000"
         android:propertyName="scaleY"
         android:valueFrom="0.3"
         android:valueTo="1"
@@ -24,22 +24,23 @@
         android:repeatCount="infinite"/>
 
     <objectAnimator
-        android:duration="115000"
+        android:duration="110000"
         android:propertyName="x"
-        android:valueFrom="-110dp"
-        android:valueTo="350dp"
+        android:valueFrom="-170dp"
+        android:valueTo="400dp"
         android:valueType="floatType"
         android:repeatMode="restart"
         android:repeatCount="infinite" />
 
     <objectAnimator
-        android:duration="115000"
+        android:duration="110000"
         android:propertyName="y"
-        android:valueFrom="90dp"
-        android:valueTo="45dp"
+        android:valueFrom="120dp"
+        android:valueTo="80dp"
         android:valueType="floatType"
         android:repeatMode="restart"
         android:repeatCount="infinite" />
+
 
 
 </set>

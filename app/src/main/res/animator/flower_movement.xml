@@ -9,22 +9,23 @@
         android:duration="30000"
         android:propertyName="scaleX"
         android:valueFrom="0"
-        android:valueTo="1"
+        android:valueTo="0.3"
         android:valueType="floatType" />
 
     <objectAnimator
         android:duration="30000"
         android:propertyName="scaleY"
         android:valueFrom="0"
-        android:valueTo="1"
+        android:valueTo="0.3"
         android:valueType="floatType" />
 
     <objectAnimator
         android:duration="30000"
         android:startOffset="1"
         android:propertyName="y"
-        android:valueFrom="211dp"
-        android:valueTo="100dp"
+        android:valueFrom="320dp"
+        android:valueTo="275dp"
         android:valueType="floatType" />
-
+    <!-- android:valueFrom="211dp"
+        android:valueTo="100dp" -->
 </set>

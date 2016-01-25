@@ -51,21 +51,26 @@ public class AnimActivity extends AppCompatActivity {
     private Project breakingProject;
     private Payment payment;
 
-    AnimatorSet sunAnimatorSet;
-    AnimatorSet cloud1AnimatorSet;
-    AnimatorSet cloud2AnimatorSet;
-    ValueAnimator skyAnimator;
-    ValueAnimator groundAnimator;
-    AnimatorSet flowerAnimatorSet;
 
-    //AnimatorSet sunYAnimatorSet;
-    //AnimatorSet sunXAnimatorSet;
-
-    ImageView seedView;
-    ImageView potView;
+    AnimatorSet amnestyFlowerAnimatorSet;
+    AnimatorSet msfFlowerAnimatorSet;
+    AnimatorSet unicefFlowerAnimatorSet;
+    AnimatorSet hotairBalloonAnimatorSet;
+    AnimatorSet smallCloud1AnimatorSet;
+    AnimatorSet smallCloud2AnimatorSet;
+    AnimatorSet smallCloud3AnimatorSet;
+    AnimatorSet sunraysAnimatorSet;
+    ImageView amnestySeedView;
+    ImageView msfSeedView;
+    ImageView unicefSeedView;
+    ImageView plantingGroundView;
     String msg = "DRAG MSG";
+    int senderSeed;
 
-    private android.widget.RelativeLayout.LayoutParams layoutParams;
+    private android.widget.RelativeLayout.LayoutParams amnestyFlowerLayoutParams;
+    private android.widget.RelativeLayout.LayoutParams msfFlowerLayoutParams;
+    private android.widget.RelativeLayout.LayoutParams unicefFlowerLayoutParams;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,123 +83,67 @@ public class AnimActivity extends AppCompatActivity {
         ParseObject.registerSubclass(Organization.class);
         ParseObject.registerSubclass(Project.class);
         ParseObject.registerSubclass(Payment.class);
-        getBreakingProject();
+//        getBreakingProject();
 
         // find current minute of day to set animation offset
+        /*
         Calendar CurrentDateTime = Calendar.getInstance();
         int hours = CurrentDateTime.get(Calendar.HOUR_OF_DAY);
         int minutes = hours * 60 + CurrentDateTime.get(Calendar.MINUTE);
         float startOffset = (float) minutes / (60 * 24);
 
         Log.d("OFFSET: ", String.valueOf(-(long) (startOffset * 60000)));
+        */
 
-        // sun animation configuration
-        ImageView sun = (ImageView) findViewById(R.id.sun);
-        sunAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.sun_movement);
-        sunAnimatorSet.setStartDelay(-(long) (startOffset * 60000));
-        sunAnimatorSet.setTarget(sun);
-        /***************************/
-
-        // cloud animation configuration
-        // cloud1
-        ImageView cloud1 = (ImageView) findViewById(R.id.cloud1);
-        cloud1AnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.cloud_movement);
-        cloud1AnimatorSet.setTarget(cloud1);
-        // cloud2
-        ImageView cloud2 = (ImageView) findViewById(R.id.cloud2);
-        cloud2AnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.cloud_movement);
-        cloud2AnimatorSet.setTarget(cloud2);
-        /***************************/
-
-        // sky animation configuration
-        skyAnimator = ObjectAnimator.ofInt(findViewById(R.id.sky), "backgroundColor",
-                Color.rgb(0x00, 0x00, 0x4c), Color.rgb(0xae, 0xc2, 0xff));
-        //set same duration and animation properties as others
-        skyAnimator.setDuration(60000);
-        skyAnimator.setEvaluator(new ArgbEvaluator());
-        skyAnimator.setRepeatCount(ValueAnimator.INFINITE);
-        skyAnimator.setRepeatMode(ValueAnimator.REVERSE);
-        /*************************************/
-
-        // ground animation configuration
-        groundAnimator = ObjectAnimator.ofInt(findViewById(R.id.ground), "backgroundColor",
-                Color.rgb(0x00, 0x47, 0x00), Color.rgb(0x45, 0xae, 0x45));
-        //set same duration and animation properties as others
-        groundAnimator.setDuration(60000);
-        groundAnimator.setEvaluator(new ArgbEvaluator());
-        groundAnimator.setRepeatCount(ValueAnimator.INFINITE);
-        groundAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        // amnestyFlower animation configuration
+        final ImageView amnestyFlower = (ImageView) findViewById(R.id.amnesty_flower);
+        amnestyFlowerAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.flower_movement);
+        amnestyFlowerAnimatorSet.setTarget(amnestyFlower);
+        /****************************************/
+        // msfFlower animation configuration
+        final ImageView msfFlower = (ImageView) findViewById(R.id.msf_flower);
+        msfFlowerAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.flower_movement);
+        msfFlowerAnimatorSet.setTarget(msfFlower);
+        /****************************************/
+        // msfFlower animation configuration
+        final ImageView unicefFlower = (ImageView) findViewById(R.id.unicef_flower);
+        unicefFlowerAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.flower_movement);
+        unicefFlowerAnimatorSet.setTarget(unicefFlower);
         /****************************************/
 
-        // ground animation configuration
-        ImageView flower = (ImageView) findViewById(R.id.flower);
-        flowerAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.flower_movement);
-        flowerAnimatorSet.setTarget(flower);
-        /****************************************/
+        final ImageView hotairBalloon = (ImageView) findViewById(R.id.hotair_amnesty);
+        hotairBalloonAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.balloon_movement);
+        hotairBalloonAnimatorSet.setTarget(hotairBalloon);
+        hotairBalloonAnimatorSet.start();
 
-        // starting animations
-        sunAnimatorSet.start();
-        cloud1AnimatorSet.start();
-        cloud2AnimatorSet.start();
-        skyAnimator.start();
-        groundAnimator.start();
-        //flowerAnimatorSet.start(); //is started in seed drag
+        ImageView smallCloud1 = (ImageView) findViewById(R.id.cloud1);
+        smallCloud1AnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.cloud_movement);
+        smallCloud1AnimatorSet.setTarget(smallCloud1);
+        smallCloud1AnimatorSet.start();
+
+        ImageView smallCloud2 = (ImageView) findViewById(R.id.cloud2);
+        smallCloud2AnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.cloud_movement2);
+        smallCloud2AnimatorSet.setTarget(smallCloud2);
+        smallCloud2AnimatorSet.start();
+
+        ImageView smallCloud3 = (ImageView) findViewById(R.id.cloud3);
+        smallCloud3AnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.cloud_movement3);
+        smallCloud3AnimatorSet.setTarget(smallCloud3);
+        smallCloud3AnimatorSet.start();
+
+        final ImageView sunrays = (ImageView) findViewById(R.id.sunrays);
+        sunraysAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.sun_movement);
+        sunraysAnimatorSet.setTarget(sunrays);
+        sunraysAnimatorSet.start();
+
+        amnestySeedView = (ImageView) findViewById(R.id.amnesty_seed);
+        msfSeedView = (ImageView) findViewById(R.id.msf_seed);
+        unicefSeedView = (ImageView) findViewById(R.id.unicef_seed);
+
+        plantingGroundView = (ImageView) findViewById(R.id.planting_ground);
 
 
-        skyAnimator.addUpdateListener(
-
-                new ValueAnimator.AnimatorUpdateListener() {
-
-                    TextView textView = (TextView) findViewById(R.id.greeting);
-
-                    float animatedFractionPrev = 0.0f;
-                    float animatedFractionCurr = 0.0f;
-                    int counter = 0;
-
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator valueAnimator) {
-
-                        if (counter > 100) {
-                            counter = 0;
-
-                            animatedFractionCurr = valueAnimator.getAnimatedFraction();
-
-                            if (animatedFractionCurr > animatedFractionPrev) {
-                                if (animatedFractionCurr > 0.0 && animatedFractionCurr <= 0.70) {
-                                    textView.setText("Good morning!");
-                                } else {
-                                    textView.setText("Good day!");
-                                }
-                            } else {
-                                if (animatedFractionCurr >= 0.8) {
-                                    textView.setText("Good day!");
-                                } else if (animatedFractionCurr < 0.8 && animatedFractionCurr >= 0.1) {
-                                    textView.setText("Good afternoon!");
-                                } else {
-                                    textView.setText("Good Evening!");
-                                }
-                            }
-                            animatedFractionPrev = animatedFractionCurr;
-                        }
-                        counter = counter + 1;
-                    }
-                });
-
-        seedView = (ImageView)findViewById(R.id.seed);
-        potView = (ImageView)findViewById(R.id.pot);
-
-        if (addSeed != null)
-        {
-            if (addSeed.equals("addOneSeed")) {
-                seedView.setVisibility(View.VISIBLE);
-            }
-        }
-        else
-        {
-            seedView.setVisibility(View.INVISIBLE);
-        }
-
-        seedView.setOnLongClickListener(
+        amnestySeedView.setOnLongClickListener(
                 new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
@@ -202,46 +151,121 @@ public class AnimActivity extends AppCompatActivity {
                         String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
 
                         ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
-                        View.DragShadowBuilder myShadow = new View.DragShadowBuilder(seedView);
+                        View.DragShadowBuilder myShadow = new View.DragShadowBuilder(amnestySeedView);
 
                         v.startDrag(dragData, myShadow, null, 0);
+                        Log.d(msg, "ON LONG CLICK: Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                + amnestySeedView.getId());
+
                         return true;
                     }
                 });
 
-        seedView.setOnDragListener(
+        amnestySeedView.setOnDragListener(
                 new View.OnDragListener() {
                     @Override
                     public boolean onDrag(View v, DragEvent event) {
+                        Log.d(msg, "Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                + amnestySeedView.getId() + " ROMPELO " + event.getLocalState().toString());
+
+
                         switch (event.getAction()) {
                             case DragEvent.ACTION_DRAG_STARTED:
-                                Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED");
+                                //Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED amnestySeed");
+                                if (senderSeed == 1)
+                                    amnestySeedView.setVisibility(View.INVISIBLE);
+                                //layoutParams = (RelativeLayout.LayoutParams) v.getLayoutParams();
+
+                                break;
+
+                            case DragEvent.ACTION_DROP:
+                                Log.d(msg, "ACTION_DROP event is " + String.valueOf(event.getResult()) + "at X: " + String.valueOf(event.getX()) + " Y: " + String.valueOf(event.getY()));
+                                if (senderSeed == 1) {
+                                    if (event.getResult()) {
+                                        amnestySeedView.setVisibility(View.GONE);
+                                    } else {
+                                        amnestySeedView.setVisibility(View.VISIBLE);
+                                    }// Do nothing
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        return true;
+                    }
+                }
+
+        );
+
+        amnestySeedView.setOnTouchListener(
+                new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            ClipData data = ClipData.newPlainText("", "");
+                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(amnestySeedView);
+                            amnestySeedView.startDrag(data, shadowBuilder, amnestySeedView, 0);
+                            //amnestySeedView.setVisibility(View.INVISIBLE);
+                            Log.d(msg, "ON TOUCH: Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                    + amnestySeedView.getId());
+                            Log.d(msg, "SENDERSEED = 1");
+                            senderSeed = 1;
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+
+        );
+
+        msfSeedView.setOnLongClickListener(
+                new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
+                        String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                        ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
+                        View.DragShadowBuilder myShadow = new View.DragShadowBuilder(msfSeedView);
+
+                        v.startDrag(dragData, myShadow, null, 0);
+                        Log.d(msg, "ON LONG CLICK: Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                + msfSeedView.getId());
+
+                        return true;
+                    }
+                });
+
+        msfSeedView.setOnDragListener(
+                new View.OnDragListener() {
+                    @Override
+                    public boolean onDrag(View v, DragEvent event) {
+
+                        Log.d(msg, "Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                + msfSeedView.getId() + " ROMPELO " + event.getLocalState().toString());
+
+
+                        switch (event.getAction()) {
+                            case DragEvent.ACTION_DRAG_STARTED:
+                                Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED msfSeed");
+                                if (senderSeed == 2)
+                                    msfSeedView.setVisibility(View.INVISIBLE);
 
                                 //layoutParams = (RelativeLayout.LayoutParams) v.getLayoutParams();
 
                                 break;
-                            case DragEvent.ACTION_DRAG_ENTERED:
-                                Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENTERED");
-                                // Do nothing
-                                break;
-
-                            case DragEvent.ACTION_DRAG_EXITED:
-                                Log.d(msg, "Action is DragEvent.ACTION_DRAG_EXITED");
-                                // Do nothing
-                                break;
-
-                            case DragEvent.ACTION_DRAG_LOCATION:
-                                Log.d(msg, "Action is DragEvent.ACTION_DRAG_LOCATION");
-                                // Do nothing
-                                break;
-
-                            case DragEvent.ACTION_DRAG_ENDED:
-                                Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENDED");
-                                // Do nothing
-                                break;
 
                             case DragEvent.ACTION_DROP:
-                                Log.d(msg, "ACTION_DROP event" + "at X: " + String.valueOf(event.getX()) + " Y: " + String.valueOf(event.getY()));
+                                //Log.d(msg, "ACTION_DROP event" + "at X: " + String.valueOf(event.getX()) + " Y: " + String.valueOf(event.getY()));
+                                if (senderSeed == 2) {
+                                    if (event.getResult()) {
+                                        msfSeedView.setVisibility(View.GONE);
+                                    } else {
+                                        msfSeedView.setVisibility(View.VISIBLE);
+                                    }
+                                }
+
                                 // Do nothing
                                 break;
                             default:
@@ -253,15 +277,19 @@ public class AnimActivity extends AppCompatActivity {
 
         );
 
-        seedView.setOnTouchListener(
+        msfSeedView.setOnTouchListener(
                 new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             ClipData data = ClipData.newPlainText("", "");
-                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(seedView);
-                            seedView.startDrag(data, shadowBuilder, seedView, 0);
-                            //seedView.setVisibility(View.INVISIBLE);
+                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(msfSeedView);
+                            msfSeedView.startDrag(data, shadowBuilder, msfSeedView, 0);
+                            //msfSeedView.setVisibility(View.INVISIBLE);
+                            Log.d(msg, "ON TOUCH: Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                    + msfSeedView.getId());
+                            Log.d(msg, "SENDERSEED = 2");
+                            senderSeed = 2;
                             return true;
                         } else {
                             return false;
@@ -271,47 +299,152 @@ public class AnimActivity extends AppCompatActivity {
 
         );
 
-        potView.setOnDragListener(new View.OnDragListener()
+        unicefSeedView.setOnLongClickListener(
+                new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        ClipData.Item item = new ClipData.Item((CharSequence) v.getTag());
+                        String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                        ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
+                        View.DragShadowBuilder myShadow = new View.DragShadowBuilder(unicefSeedView);
+
+                        v.startDrag(dragData, myShadow, null, 0);
+                        Log.d(msg, "ON LONG CLICK: Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                + unicefSeedView.getId());
+
+                        return true;
+                    }
+                });
+
+        unicefSeedView.setOnDragListener(
+                new View.OnDragListener() {
+                    @Override
+                    public boolean onDrag(View v, DragEvent event) {
+
+                        Log.d(msg, "Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                + unicefSeedView.getId() + " ROMPELO " + event.getLocalState().toString());
+
+
+                        switch (event.getAction()) {
+                            case DragEvent.ACTION_DRAG_STARTED:
+                                //Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED unicefSeed");
+                                if (senderSeed == 3)
+                                    unicefSeedView.setVisibility(View.INVISIBLE);
+
+                                //layoutParams = (RelativeLayout.LayoutParams) v.getLayoutParams();
+
+                                break;
+
+                            case DragEvent.ACTION_DROP:
+                                Log.d(msg, "ACTION_DROP event" + "at X: " + String.valueOf(event.getX()) + " Y: " + String.valueOf(event.getY()));
+                                if (senderSeed == 3) {
+                                    if (event.getResult()) {
+                                        unicefSeedView.setVisibility(View.GONE);
+                                    } else {
+                                        unicefSeedView.setVisibility(View.VISIBLE);
+                                    }
+                                }
+
+                                // Do nothing
+                                break;
+                            default:
+                                break;
+                        }
+                        return true;
+                    }
+                }
+
+        );
+
+        unicefSeedView.setOnTouchListener(
+                new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            ClipData data = ClipData.newPlainText("", "");
+                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(unicefSeedView);
+                            unicefSeedView.startDrag(data, shadowBuilder, unicefSeedView, 0);
+                            //unicefSeedView.setVisibility(View.INVISIBLE);
+                            Log.d(msg, "ON TOUCH: Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                                    + unicefSeedView.getId());
+                            Log.d(msg, "SENDERSEED = 3");
+                            senderSeed = 3;
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+
+        );
+
+        plantingGroundView.setOnDragListener(new View.OnDragListener()
 
         {
             @Override
             public boolean onDrag(View v, DragEvent event) {
+                Log.d(msg, "Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
+                        + plantingGroundView.getId() + " ROMPELO " + event.getLocalState().toString());
+
+
                 switch (event.getAction()) {
-                    case DragEvent.ACTION_DRAG_STARTED:
-                        layoutParams = (RelativeLayout.LayoutParams) v.getLayoutParams();
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED");
-                        // Do nothing
-                        break;
-
-                    case DragEvent.ACTION_DRAG_ENTERED:
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENTERED by POT");
-                        // Do nothing
-                        break;
-
-                    case DragEvent.ACTION_DRAG_EXITED:
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_EXITED by POT");
-                        // Do nothing
-                        break;
-
-                    case DragEvent.ACTION_DRAG_LOCATION:
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_LOCATION");
-                        // Do nothing
-                        break;
 
                     case DragEvent.ACTION_DRAG_ENDED:
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENDED by POT");
-                        if(event.getResult() == true) {
-                            seedView.setVisibility(View.GONE);
-                        }//else {
-                        //    seedView.setVisibility(View.VISIBLE);
-                        //}
+                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENDED by plantground");
+                        if (!event.getResult()) {
+                            if (senderSeed == 1) {
+                                Log.d(msg, "amnestySeed");
+                                final ImageView amnestySeed = (ImageView) findViewById(R.id.amnesty_seed);
+                                amnestySeed.setVisibility(View.VISIBLE);
 
+                            } else if (senderSeed == 2) {
+                                Log.d(msg, "msfSeed");
+                                final ImageView msfSeed = (ImageView) findViewById(R.id.msf_seed);
+                                msfSeed.setVisibility(View.VISIBLE);
+                            } else if (senderSeed == 3) {
+                                Log.d(msg, "unicefSeed");
+                                final ImageView unicefSeed = (ImageView) findViewById(R.id.unicef_seed);
+                                unicefSeed.setVisibility(View.VISIBLE);
+                            }
+                        }
                         // Do nothing
                         break;
 
                     case DragEvent.ACTION_DROP:
-                        Log.d(msg, "ACTION_DROP event  by POT" + "at X: " + String.valueOf(event.getX()) + " Y: " + String.valueOf(event.getY()));
-                        flowerAnimatorSet.start();
+
+                        int plantOffsetX = (int) plantingGroundView.getX();
+                        int plantOffsetY = (int) plantingGroundView.getY();
+                        Log.d(msg, "ACTION_DROP event  by POT " + String.valueOf(v.getId()) + " sent at X: " + String.valueOf(event.getX()) + " Y: " + String.valueOf(event.getY())
+                                + "\n X and Y offsets: " + String.valueOf(plantOffsetX) + ", " + String.valueOf(plantOffsetY));
+                        if (senderSeed == 1) {
+                            Log.d(msg, "amnestySeed");
+                            final ImageView amnestyFlower = (ImageView) findViewById(R.id.amnesty_flower);
+                            amnestyFlower.setVisibility(View.VISIBLE);
+                            amnestyFlowerLayoutParams = (RelativeLayout.LayoutParams) amnestyFlower.getLayoutParams();
+                            amnestyFlowerLayoutParams.leftMargin = (int) event.getX() + plantOffsetX - 350;
+                            //amnestyFlowerLayoutParams.topMargin = (int) event.getY() + plantOffsetY - 250;
+                            amnestyFlower.setLayoutParams(amnestyFlowerLayoutParams);
+                            amnestyFlowerAnimatorSet.start();
+                        } else if (senderSeed == 2) {
+                            Log.d(msg, "msfSeed");
+                            final ImageView msfFlower = (ImageView) findViewById(R.id.msf_flower);
+                            msfFlowerLayoutParams = (RelativeLayout.LayoutParams) msfFlower.getLayoutParams();
+                            msfFlowerLayoutParams.leftMargin = (int) event.getX() + plantOffsetX - 350;
+                            //msfFlowerLayoutParams.topMargin = (int) event.getY() + plantOffsetY - 250;
+                            msfFlower.setLayoutParams(msfFlowerLayoutParams);
+                            msfFlower.setVisibility(View.VISIBLE);
+                            msfFlowerAnimatorSet.start();
+                        } else if (senderSeed == 3) {
+                            Log.d(msg, "unicefSeed");
+                            final ImageView unicefFlower = (ImageView) findViewById(R.id.unicef_flower);
+                            unicefFlowerLayoutParams = (RelativeLayout.LayoutParams) unicefFlower.getLayoutParams();
+                            unicefFlowerLayoutParams.leftMargin = (int) event.getX() + plantOffsetX - 350;
+                            //unicefFlowerLayoutParams.topMargin = (int) event.getY() + plantOffsetY - 250;
+                            unicefFlower.setLayoutParams(unicefFlowerLayoutParams);
+                            unicefFlower.setVisibility(View.VISIBLE);
+                            unicefFlowerAnimatorSet.start();
+                        }
                         break;
                     default:
                         break;
@@ -320,8 +453,9 @@ public class AnimActivity extends AppCompatActivity {
             }
         });
     }
+
     public void goToDonate(View v){
-        startActivity(new Intent(AnimActivity.this, ProjectListActivity.class));
+        startActivity(new Intent(AnimActivity.this, /*ProjectListActivity.class*/LoginActivity.class));
     }
 
     public void logOut(View v){
@@ -444,7 +578,7 @@ public class AnimActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
-
+/*
     public void getBreakingProject() {
         projectList = Application.getList();
 
@@ -486,7 +620,7 @@ public class AnimActivity extends AppCompatActivity {
         }
         return ;
     }
-
+*/
     private List<Project> sortByMatter(List<Payment> payments,List<Project> projects ) {
         List<Project> subscriberProjects = new ArrayList<Project>(projects);
         List<Project> sortList = new ArrayList<Project>();

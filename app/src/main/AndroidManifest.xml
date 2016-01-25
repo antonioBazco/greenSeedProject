@@ -34,7 +34,8 @@
         </activity>
         <activity
             android:name=".AnimActivity"
-            android:label="AnimActivity" />
+            android:label="AnimActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DonationListActivity"
             android:windowSoftInputMode="stateHidden" >

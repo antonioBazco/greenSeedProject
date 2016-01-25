@@ -3,140 +3,244 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/sky"
-    android:background="#00004C"
-    tools:context="com.example.fredo.animationtest.AnimActivity">
+    tools:context="greenseed.eurecom.fr.greenseed.AnimActivity">
 
 
+    <!-- sky -->
+    <ImageView
+        android:id="@+id/sky"
+        android:src="@drawable/sky"
+        android:contentDescription="@string/sky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:scaleY="1.7"
+        android:scaleX="2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"/>
 
+    <!-- sunrays -->
+    <ImageView
+        android:id="@+id/sunrays"
+        android:src="@drawable/sunrays"
+        android:contentDescription="@string/sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:scaleY="0.36"
+        android:scaleX="0.36"
+        android:layout_marginTop="-41dp"
+        android:layout_marginStart="-37dp"/>
 
+    <!-- sun -->
     <ImageView
         android:id="@+id/sun"
+        android:src="@drawable/sun"
+        android:contentDescription="@string/sun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/sun"
-        android:src="@drawable/sun"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentEnd="false"
-        android:baselineAlignBottom="true"
-        android:layout_alignBottom="@+id/ground" />
+        android:scaleType="center"
+        android:scaleY="0.4"
+        android:scaleX="0.4"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="10dp"/>
 
+
+    <!-- cloud1 -->
     <ImageView
         android:id="@+id/cloud1"
+        android:src="@drawable/cloud"
+        android:contentDescription="@string/cloud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/cloud"
-        android:src="@drawable/cloud"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="-200dp"
-        android:layout_marginTop="40dp" />
+        android:scaleType="center"
+        android:scaleY="0.3"
+        android:scaleX="0.3"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="-100dp"/>
 
+    <!-- cloud2 -->
     <ImageView
         android:id="@+id/cloud2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/cloud"
         android:src="@drawable/cloud"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="-300dp"
-        android:layout_marginTop="100dp"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/ground"
-        android:background="#004700"
-        android:layout_alignParentBottom="true" >
-    </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/pot"
+        android:contentDescription="@string/cloud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/pot"
-        android:src="@drawable/pot"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="300dp" />
-
-    <ImageView
-        android:id="@+id/flower"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/flower"
-        android:src="@drawable/flower"
-        android:layout_marginLeft="1dp"
+        android:scaleType="center"
+        android:scaleY="0.3"
+        android:scaleX="0.3"
         android:layout_marginTop="100dp"
-        android:scaleX="0"
-        android:scaleY="0" />
+        android:layout_marginStart="-100dp"/>
 
+    <!-- cloud3 -->
     <ImageView
-        android:id="@+id/seed"
+        android:id="@+id/cloud3"
+        android:src="@drawable/cloud"
+        android:contentDescription="@string/cloud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/seed"
+        android:scaleType="center"
+        android:scaleY="0.3"
+        android:scaleX="0.3"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="50dp"/>
+
+    <!-- ground -->
+    <ImageView
+        android:id="@+id/ground"
+        android:src="@drawable/ground"
+        android:contentDescription="@string/ground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:scaleY="1.4"
+        android:scaleX="1.4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"/>
+
+
+
+    <!--planting area -->
+    <ImageView
+        android:id="@+id/planting_ground"
+        android:src="@drawable/planting_ground"
+        android:contentDescription="@string/planting_ground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:scaleY="1.8"
+        android:scaleX="1.5"
+        android:layout_marginStart="80dp"
+        android:layout_alignBottom="@id/ground"
+        android:layout_marginBottom="70dp"/>
+
+
+    <!-- air balloon -->
+    <ImageView
+        android:id="@+id/hotair_amnesty"
+        android:src="@drawable/hotair_amnesty"
+        android:contentDescription="@string/hotair_balloon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleY="0.2"
+        android:scaleX="0.2"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="-80dp"
+        android:onClick="goToDonate" />
+
+    <!-- air balloon
+    <ImageView
+        android:id="@+id/hotair_msf"
+        android:src="@drawable/hotair_msf"
+        android:contentDescription="@string/hotair_balloon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleY="1"
+        android:scaleX="1"/>
+-->
+
+    <!-- air balloon
+    <ImageView
+        android:id="@+id/hotair_unicef"
+        android:src="@drawable/hotair_unicef"
+        android:contentDescription="@string/hotair_balloon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleY="1"
+        android:scaleX="1"/>
+-->
+
+    <!--flower1 -->
+    <ImageView
+        android:id="@+id/amnesty_flower"
+        android:src="@drawable/flower_amnesty"
+        android:contentDescription="@string/amnesty_flower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        android:scaleX="0"
+        android:scaleY="0"
+        />
+
+    <!--flower2 -->
+    <ImageView
+        android:id="@+id/msf_flower"
+        android:src="@drawable/flower_msf"
+        android:contentDescription="@string/msf_flower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        android:scaleX="0"
+        android:scaleY="0"
+        />
+
+
+    <!--flower3 -->
+    <ImageView
+        android:id="@+id/unicef_flower"
+        android:src="@drawable/flower_unicef"
+        android:contentDescription="@string/unicef_flower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        android:scaleX="0"
+        android:scaleY="0"
+        />
+
+
+    <!--seed1 -->
+    <ImageView
+        android:id="@+id/amnesty_seed"
         android:src="@drawable/seed"
-        android:layout_marginLeft="300dp"
+        android:contentDescription="@string/seed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleY="0.5"
+        android:scaleX="0.5"
+        android:layout_marginLeft="320dp"
         android:layout_marginTop="400dp" />
 
-    <TextView
+
+    <!--seed2 -->
+    <ImageView
+        android:id="@+id/msf_seed"
+        android:src="@drawable/seed"
+        android:contentDescription="@string/seed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ffffff"
-        android:id="@+id/greeting"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="40dp" />
+        android:scaleY="0.5"
+        android:scaleX="0.5"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="440dp" />
 
-    <ImageButton
+
+    <!--seed3 -->
+    <ImageView
+        android:id="@+id/unicef_seed"
+        android:src="@drawable/seed"
+        android:contentDescription="@string/seed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:src="@mipmap/ic_donate"
-        android:onClick="goToDonate"
-        android:layout_below="@+id/cloud1"
-        android:layout_alignLeft="@+id/buttonLogOut"
-        android:layout_alignStart="@+id/buttonLogOut" />
+        android:scaleY="0.5"
+        android:scaleX="0.5"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="480dp" />
 
-    <ImageButton
-        style="?android:attr/buttonStyleSmall"
+    <ImageView
+        android:id="@+id/donate_button"
+        android:src="@drawable/donate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:id="@+id/buttonLogOut"
-        android:onClick="logOut"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:src="@mipmap/ic_logout" />
-
-    <!--<Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Left"
-        android:id="@+id/buttonLeft"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Middle"
-        android:id="@+id/buttonMiddle"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Right"
-        android:id="@+id/buttonRight"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true" />
-    -->
-
+        android:layout_alignBottom="@id/ground"
+        android:layout_marginBottom="-40dp"
+        android:scaleY="0.5"
+        android:scaleX="0.5"
+        android:onClick="goToDonate"/>
 
 </RelativeLayout>
