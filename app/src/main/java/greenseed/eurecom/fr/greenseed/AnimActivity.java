@@ -83,7 +83,7 @@ public class AnimActivity extends AppCompatActivity {
         ParseObject.registerSubclass(Organization.class);
         ParseObject.registerSubclass(Project.class);
         ParseObject.registerSubclass(Payment.class);
-//        getBreakingProject();
+        getBreakingProject();
 
         // find current minute of day to set animation offset
         /*
@@ -455,7 +455,8 @@ public class AnimActivity extends AppCompatActivity {
     }
 
     public void goToDonate(View v){
-        startActivity(new Intent(AnimActivity.this, /*ProjectListActivity.class*/LoginActivity.class));
+//        logOut(null);
+        startActivity(new Intent(AnimActivity.this, ProjectListActivity.class));
     }
 
     public void logOut(View v){
@@ -489,8 +490,6 @@ public class AnimActivity extends AppCompatActivity {
                 //String m_Text = input.getText().toString();
                 // Saving the payment in the database
                 payment = new Payment(input.getText().toString(), breakingProject.getMatter(), breakingProject);
-
-                //payment.setACL(new ParseACL(ParseUser.getCurrentUser()));
                 payment.saveInBackground(new SaveCallback() {
                     public void done(ParseException e) {
                         if (e == null) {
@@ -578,7 +577,7 @@ public class AnimActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
-/*
+
     public void getBreakingProject() {
         projectList = Application.getList();
 
@@ -606,8 +605,8 @@ public class AnimActivity extends AppCompatActivity {
                         query.findInBackground(new FindCallback<Payment>() {
                             @Override
                             public void done(List<Payment> payments, ParseException error) {
-                                int value;
-                                if (payments != null) {
+                                if (payments != null && payments.size() != 0) {
+                                    System.out.println("payments.size()   "+payments.size());
                                     projectList = sortByMatter(payments, projectList);
                                     Application.saveList(projectList);
                                 }
@@ -618,9 +617,8 @@ public class AnimActivity extends AppCompatActivity {
                 }
             });
         }
-        return ;
     }
-*/
+
     private List<Project> sortByMatter(List<Payment> payments,List<Project> projects ) {
         List<Project> subscriberProjects = new ArrayList<Project>(projects);
         List<Project> sortList = new ArrayList<Project>();
