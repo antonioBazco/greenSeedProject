@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:background="@drawable/customshape" >
 
 
     <!--<TextView-->
@@ -16,7 +17,7 @@
         <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/org_pic"
         android:layout_weight="1"
@@ -34,7 +35,15 @@
             android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Test Testing"
-            android:gravity="center" />
+            android:textColor="#727272"
+            android:gravity="center"
+            android:shadowColor="#B2EC5D" />
     </LinearLayout>
-
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_pic"
+        android:layout_weight="1"
+        android:src="@mipmap/ic_info"/>
+    <!--android:onClick="showOrgInfo"-->
 </LinearLayout>
