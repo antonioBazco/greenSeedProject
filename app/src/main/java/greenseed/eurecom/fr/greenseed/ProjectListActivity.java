@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +13,11 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -100,14 +104,15 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
 
         project = mProjectAdapter.getItem(position);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.ThemeDialogCustom);
 
         builder.setTitle("Type quantity (€)");
 
         // Set up the input
         final EditText input = new EditText(this);
+        input.setBackgroundColor(Color.parseColor("#B2EC5D"));//F4F9EE
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-        input.setText(""+String.valueOf(averagePayment));
+        input.setText("" + String.valueOf(averagePayment));
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
         builder.setView(input);
 
@@ -144,12 +149,29 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
     }
 
     public void paymentRegisteredInDatabase() {
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.paypal,
+                (ViewGroup) findViewById(R.id.relativeLayout1));
 
-        String name = getString(R.string.donation_confirmation);
+        AlertDialog.Builder paypal = new AlertDialog.Builder(this);
+        paypal.setView(view);
+        paypal.setPositiveButton("Pay",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String name = getString(R.string.donation_confirmation);
+                                String info = getString(R.string.sharing_question_1) +  payment.get("value") + getString(R.string.sharing_question_2);
+                                openOptionsHelpDialog(name, info);
+                            }
+                        }
+                );
+        AlertDialog dialogPaypal = paypal.create();
+        dialogPaypal.show();
 
-        String info = getString(R.string.sharing_question_1) +  payment.get("value") + getString(R.string.sharing_question_2);
+        Button b = dialogPaypal.getButton(DialogInterface.BUTTON_POSITIVE);
+        if(b != null)
+            b.setTextColor(Color.parseColor("#66CC00"));
 
-        openOptionsHelpDialog(name, info);
     }
 
     private void openOptionsHelpDialog(String name, String info)

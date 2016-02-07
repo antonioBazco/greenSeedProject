@@ -6,6 +6,7 @@ import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.DialogInterface;
@@ -13,11 +14,14 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.net.Uri;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -452,13 +456,46 @@ public class AnimActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        NavigationView navView = (NavigationView)findViewById(R.id.navview);
+
+        navView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                        boolean fragmentTransaction = false;
+                        Fragment fragment = null;
+
+                        switch (menuItem.getItemId()) {
+                            case R.id.menu_seccion_1:
+                                Log.i("NavigationView", "Pulsada opción 1");
+                                //fragment = new Fragment1();
+                                //fragmentTransaction = true;
+                                break;
+                            case R.id.menu_seccion_2:
+                                Log.i("NavigationView", "Pulsada opción 2");
+                                //fragment = new Fragment2();
+                                //fragmentTransaction = true;
+                                break;
+                        }
+                        return true;
+                    }
+                });
     }
 
     public void goToDonate(View v){
 //        logOut(null);
         startActivity(new Intent(AnimActivity.this, ProjectListActivity.class));
     }
-
+    public void goToOrganizations(MenuItem item){
+//        logOut(null);
+        startActivity(new Intent(AnimActivity.this, DonationListActivity.class));
+    }
+    public void notDone(MenuItem item){
+//        logOut(null);
+        Toast.makeText(AnimActivity.this, "NOT DONE", Toast.LENGTH_LONG).show();
+    }
     public void logOut(View v){
         // Call the Parse log out method
         ParseUser.logOut();

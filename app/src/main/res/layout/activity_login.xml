@@ -20,7 +20,8 @@
                 android:hint="@string/prompt_username"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:backgroundTint="#B2EC5D" />
 
             <EditText
                 android:id="@+id/password"
@@ -32,7 +33,8 @@
                 android:singleLine="true"
                 android:imeActionId="@+id/edittext_action_login"
                 android:imeActionLabel="@string/login"
-                android:imeOptions="actionUnspecified" />
+                android:imeOptions="actionUnspecified"
+                android:backgroundTint="#B2EC5D" />
 
             <Button
                 android:id="@+id/action_button"
@@ -42,7 +44,8 @@
                 android:layout_marginTop="16dp"
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
-                android:text="@string/login" />
+                android:text="@string/login"
+                android:background="@drawable/customshape" />
         </LinearLayout>
     </ScrollView>
 

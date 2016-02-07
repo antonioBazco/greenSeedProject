@@ -20,7 +20,8 @@
                 android:hint="@string/prompt_username"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:backgroundTint="#B2EC5D" />
 
             <EditText
                 android:id="@+id/password_edit_text"
@@ -29,7 +30,8 @@
                 android:hint="@string/prompt_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:backgroundTint="#B2EC5D" />
 
             <EditText
                 android:id="@+id/password_again_edit_text"
@@ -41,7 +43,8 @@
                 android:singleLine="true"
                 android:imeActionId="@+id/edittext_action_signup"
                 android:imeActionLabel="@string/signup"
-                android:imeOptions="actionUnspecified" />
+                android:imeOptions="actionUnspecified"
+                android:backgroundTint="#B2EC5D" />
 
             <Button
                 android:id="@+id/action_button"
@@ -51,7 +54,8 @@
                 android:layout_marginTop="16dp"
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
-                android:text="@string/signup" />
+                android:text="@string/signup"
+                android:background="@drawable/customshape"/>
         </LinearLayout>
     </ScrollView>
 
