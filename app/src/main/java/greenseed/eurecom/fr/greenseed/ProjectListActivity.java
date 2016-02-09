@@ -1,8 +1,10 @@
 package greenseed.eurecom.fr.greenseed;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.net.Uri;
@@ -18,7 +20,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,6 +60,12 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
     private ParseObject payment;
     private List<Project> projectList;
     private int averagePayment;
+    static final int FB_REQUEST = 1;
+    private String org;
+    private CheckBox dontShowAgain;
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -75,7 +85,6 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
 
         orgSearch = (EditText) findViewById(R.id.project_input);
         orgSearch.addTextChangedListener(new TextWatcher() {
-
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // When user changed the Text
@@ -90,6 +99,9 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
             public void afterTextChanged(Editable arg0) {
             }
         });
+
+        prefs = getSharedPreferences("myPreferences", Context.MODE_PRIVATE);
+        editor = prefs.edit();
 
         // download the projects
         projectList = Application.getList();
@@ -120,9 +132,9 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
         builder.setPositiveButton("DONATE", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //String m_Text = input.getText().toString();
                 // Saving the payment in the database
                 payment = new Payment(input.getText().toString(), project.getMatter(), project);
+                org = project.getOrganization().getName();
 
                 //payment.setACL(new ParseACL(ParseUser.getCurrentUser()));
                 payment.saveInBackground(new SaveCallback() {
@@ -149,57 +161,68 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
     }
 
     public void paymentRegisteredInDatabase() {
-        LayoutInflater inflater = getLayoutInflater();
-        View view = inflater.inflate(R.layout.paypal,
-                (ViewGroup) findViewById(R.id.relativeLayout1));
 
-        AlertDialog.Builder paypal = new AlertDialog.Builder(this);
-        paypal.setView(view);
-        paypal.setPositiveButton("Pay",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String name = getString(R.string.donation_confirmation);
-                                String info = getString(R.string.sharing_question_1) +  payment.get("value") + getString(R.string.sharing_question_2);
-                                openOptionsHelpDialog(name, info);
-                            }
-                        }
-                );
-        AlertDialog dialogPaypal = paypal.create();
-        dialogPaypal.show();
-
-        Button b = dialogPaypal.getButton(DialogInterface.BUTTON_POSITIVE);
-        if(b != null)
-            b.setTextColor(Color.parseColor("#66CC00"));
-
+        String name = getString(R.string.donation_confirmation);
+        String info = getString(R.string.sharing_question_1) +  payment.get("value") + getString(R.string.sharing_question_2);
+        if (prefs.getBoolean("askAgain", true)) {
+            openOptionsHelpDialog(name, info);
+        } else {
+            if (prefs.getBoolean("shareAsDefault", true)) {
+                shareOnFacebook();
+            } else {
+                Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
+                Intent myIntent = new Intent(ProjectListActivity.this, AnimActivity.class);
+                myIntent.putExtra("addSeed", org);
+                startActivity(myIntent);
+            }
+        }
     }
 
     private void openOptionsHelpDialog(String name, String info)
     {
-        new AlertDialog.Builder(this)
-                .setTitle(name).setMessage(info)
-                .setPositiveButton("Share",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                shareOnFacebook();
-//                                Intent myIntent = new Intent(ProjectListActivity.this, ShareOnFacebook.class);
-//                                startActivity(myIntent);
-                            }
+
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        LayoutInflater adbInflater = LayoutInflater.from(this);
+        LinearLayout eulaLayout = (LinearLayout)adbInflater.inflate(R.layout.checkbox, null);
+        dontShowAgain = (CheckBox)eulaLayout.findViewById(R.id.skip);
+        adb.setView(eulaLayout);
+        adb.setTitle(name);
+        adb.setMessage(info);
+
+        adb.setPositiveButton("Share",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (dontShowAgain.isChecked()) {
+                            editor.putBoolean("askAgain", false);
+                            editor.putBoolean("shareAsDefault", true);
+                        } else {
+                            editor.putBoolean("askAgain", true);
                         }
-                )
-                .setNegativeButton("Not share",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
-                                Intent myIntent = new Intent(ProjectListActivity.this, AnimActivity.class);
-                                myIntent.putExtra("addSeed", "addOneSeed");
-                                startActivity(myIntent);
-                            }
+                        editor.commit();
+                        shareOnFacebook();
+                    }
+                }
+        );
+        adb.setNegativeButton("Not share",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (dontShowAgain.isChecked()) {
+                            editor.putBoolean("askAgain", false);
+                            editor.putBoolean("shareAsDefault", false);
+                        } else {
+                            editor.putBoolean("askAgain", true);
                         }
-                )
-                .show();
+                        editor.commit();
+                        Toast.makeText(ProjectListActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
+                        Intent myIntent = new Intent(ProjectListActivity.this, AnimActivity.class);
+                        myIntent.putExtra("addSeed", org);
+                        startActivity(myIntent);
+                    }
+                }
+        );
+        adb.show();
     }
 
     private void shareOnFacebook () {
@@ -231,7 +254,34 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
         startActivity(intent);
     }
 
-    public void fastDonation() {
-
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Intent myIntent = new Intent(ProjectListActivity.this, AnimActivity.class);
+        myIntent.putExtra("addSeed", org);
+        startActivity(myIntent);
     }
 }
+
+//LayoutInflater inflater = getLayoutInflater();
+//View view = inflater.inflate(R.layout.paypal,
+//        (ViewGroup) findViewById(R.id.relativeLayout1));
+//
+//AlertDialog.Builder paypal = new AlertDialog.Builder(this);
+//paypal.setView(view);
+//        paypal.setPositiveButton("Pay",
+//        new DialogInterface.OnClickListener() {
+//@Override
+//public void onClick(DialogInterface dialog, int which) {
+//        String name = getString(R.string.donation_confirmation);
+//        String info = getString(R.string.sharing_question_1) +  payment.get("value") + getString(R.string.sharing_question_2);
+//        openOptionsHelpDialog(name, info);
+//        }
+//        }
+//        );
+//        AlertDialog dialogPaypal = paypal.create();
+//        dialogPaypal.show();
+//
+//        Button b = dialogPaypal.getButton(DialogInterface.BUTTON_POSITIVE);
+//        if(b != null)
+//        b.setTextColor(Color.parseColor("#66CC00"));

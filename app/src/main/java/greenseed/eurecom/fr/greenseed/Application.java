@@ -25,6 +25,12 @@ public class Application extends android.app.Application {
 
     private static int averagePayment;
 
+    private static Project breakingProject;
+
+    public static boolean askAgain;
+
+    public static boolean shareDefault;
+
     public Application() {}
 
     @Override
@@ -59,6 +65,30 @@ public class Application extends android.app.Application {
 
     public static int getAveragePayment(){
         return averagePayment;
+    }
+
+    public static void saveBreakingProject(Project breakingProjectIn) {
+        breakingProject = breakingProjectIn;
+    }
+
+    public static Project getBreakingProject(){
+        return breakingProject;
+    }
+
+    public static void setAskAgain(boolean askAgain1) {
+        askAgain = askAgain1;
+    }
+
+    public static boolean getAskAgain(){
+        return askAgain;
+    }
+
+    public static void setShareDefault(boolean shareDefault1) {
+        shareDefault = shareDefault1;
+    }
+
+    public static boolean getShareDefault(){
+        return shareDefault;
     }
 
 }

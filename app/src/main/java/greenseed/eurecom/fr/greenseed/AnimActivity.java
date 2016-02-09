@@ -9,8 +9,10 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.net.Uri;
@@ -20,11 +22,13 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -55,7 +59,6 @@ public class AnimActivity extends AppCompatActivity {
     private Project breakingProject;
     private Payment payment;
 
-
     AnimatorSet amnestyFlowerAnimatorSet;
     AnimatorSet msfFlowerAnimatorSet;
     AnimatorSet unicefFlowerAnimatorSet;
@@ -75,12 +78,19 @@ public class AnimActivity extends AppCompatActivity {
     private android.widget.RelativeLayout.LayoutParams msfFlowerLayoutParams;
     private android.widget.RelativeLayout.LayoutParams unicefFlowerLayoutParams;
 
+    private CheckBox dontShowAgain;
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent myIntent = getIntent(); // gets the previously created intent
-        String addSeed = myIntent.getStringExtra("addSeed"); // will return "FirstKeyValue"
+        String org = myIntent.getStringExtra("addSeed"); // will return "FirstKeyValue"
+
+        /*Function to add correct seed. Maybe should be at the bottom, after initialize everything*/
+        seedAdd (org);
+
         setContentView(R.layout.activity_anim);
 
         //things changed
@@ -88,6 +98,9 @@ public class AnimActivity extends AppCompatActivity {
         ParseObject.registerSubclass(Project.class);
         ParseObject.registerSubclass(Payment.class);
         getBreakingProject();
+
+        prefs = getSharedPreferences("myPreferences", Context.MODE_PRIVATE);
+        editor = prefs.edit();
 
         // find current minute of day to set animation offset
         /*
@@ -478,6 +491,11 @@ public class AnimActivity extends AppCompatActivity {
                                 //fragment = new Fragment2();
                                 //fragmentTransaction = true;
                                 break;
+                            case R.id.menu_seccion_3:
+                                Log.i("NavigationView", "Pulsada opción 3");
+                                //fragment = new Fragment2();
+                                //fragmentTransaction = true;
+                                break;
                         }
                         return true;
                     }
@@ -485,18 +503,18 @@ public class AnimActivity extends AppCompatActivity {
     }
 
     public void goToDonate(View v){
-//        logOut(null);
         startActivity(new Intent(AnimActivity.this, ProjectListActivity.class));
     }
+
     public void goToOrganizations(MenuItem item){
-//        logOut(null);
         startActivity(new Intent(AnimActivity.this, DonationListActivity.class));
     }
-    public void notDone(MenuItem item){
-//        logOut(null);
-        Toast.makeText(AnimActivity.this, "NOT DONE", Toast.LENGTH_LONG).show();
+
+    public void openSettings(MenuItem item){
+        startActivity(new Intent(AnimActivity.this, SettingActivity.class));
     }
-    public void logOut(View v){
+
+    public void logOut(MenuItem item){
         // Call the Parse log out method
         ParseUser.logOut();
         // Start and intent for the dispatch activity
@@ -505,12 +523,8 @@ public class AnimActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
-    public void fastDonation() {
-
+    public void fastDonation(View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
         builder.setTitle("Project: " + breakingProject.getName() + ". Org: " + breakingProject.getOrganization().getName() + ". Type quantity (€)");
 
         // Set up the input
@@ -538,8 +552,7 @@ public class AnimActivity extends AppCompatActivity {
                 });
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-                {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
@@ -550,40 +563,63 @@ public class AnimActivity extends AppCompatActivity {
     }
 
     public void paymentRegisteredInDatabase() {
-
         String name = getString(R.string.donation_confirmation);
-
         String info = getString(R.string.sharing_question_1) +  payment.get("value") + getString(R.string.sharing_question_2);
-
-        openOptionsHelpDialog(name, info);
+        if (prefs.getBoolean("askAgain", true)) {
+            openOptionsHelpDialog(name, info);
+        } else {
+            if (prefs.getBoolean("shareAsDefault",true)) {
+                shareOnFacebook();
+            } else {
+                Toast.makeText(AnimActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
+                seedAdd(breakingProject.getOrganization().getName());
+            }
+        }
     }
 
     private void openOptionsHelpDialog(String name, String info)
     {
-        new AlertDialog.Builder(this)
-                .setTitle(name).setMessage(info)
-                .setPositiveButton("Share",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                shareOnFacebook();
-//                                Intent myIntent = new Intent(ProjectListActivity.this, ShareOnFacebook.class);
-//                                startActivity(myIntent);
-                            }
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        LayoutInflater adbInflater = LayoutInflater.from(this);
+        View eulaLayout = adbInflater.inflate(R.layout.checkbox, null);
+        dontShowAgain = (CheckBox)eulaLayout.findViewById(R.id.skip);
+        adb.setView(eulaLayout);
+        adb.setTitle(name);
+        adb.setMessage(info);
+
+        adb.setPositiveButton("Share",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (dontShowAgain.isChecked()) {
+                            editor.putBoolean("askAgain", false);
+                            editor.putBoolean("shareAsDefault", true);
+                        } else {
+                            editor.putBoolean("askAgain", true);
                         }
-                )
-                .setNegativeButton("Not share",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(AnimActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
-                                Intent myIntent = new Intent(AnimActivity.this, AnimActivity.class);
-                                myIntent.putExtra("addSeed", "addOneSeed");
-                                startActivity(myIntent);
-                            }
+                        editor.commit();
+                        shareOnFacebook();
+                    }
+                }
+        );
+        adb.setNegativeButton("Not share",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (dontShowAgain.isChecked()) {
+                            editor.putBoolean("askAgain", false);
+                            editor.putBoolean("shareAsDefault", false);
+                        } else {
+                            editor.putBoolean("askAgain", true);
                         }
-                )
-                .show();
+                        editor.commit();
+
+                        Toast.makeText(AnimActivity.this, "Thank you for your donation", Toast.LENGTH_LONG).show();
+                        seedAdd(breakingProject.getOrganization().getName());
+                    }
+                }
+        );
+        adb.show();
     }
 
     private void shareOnFacebook () {
@@ -611,6 +647,7 @@ public class AnimActivity extends AppCompatActivity {
             String sharerUrl =urlToShare;
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse(sharerUrl));
         }
+        seedAdd(breakingProject.getOrganization().getName());
 
         startActivity(intent);
     }
@@ -631,6 +668,7 @@ public class AnimActivity extends AppCompatActivity {
                         randomPosition = rand.nextInt(projectList.size());
 
                         breakingProject = projectList.get(randomPosition);
+                        Application.saveBreakingProject(breakingProject);
 
                         //get user payments
                         ParseQuery innerQuery = new ParseQuery("_User");
@@ -646,6 +684,8 @@ public class AnimActivity extends AppCompatActivity {
                                     System.out.println("payments.size()   "+payments.size());
                                     projectList = sortByMatter(payments, projectList);
                                     Application.saveList(projectList);
+                                } else {
+                                    averagePayment = 5;
                                 }
                             }
                         });
@@ -687,10 +727,8 @@ public class AnimActivity extends AppCompatActivity {
                 newProjectsID.remove(projectID);
             }
         }
-
         averagePayment = averagePayment / payments.size();
         Application.saveAveragePayment(averagePayment);
-
         Map<String, Integer> matterSortList = sortByValues(matterList);
 
         for (String entry : matterSortList.keySet()) {
@@ -705,7 +743,6 @@ public class AnimActivity extends AppCompatActivity {
 
         return sortList;
     }
-
 
     public static <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(Map<K,V> map){
         List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
@@ -724,4 +761,35 @@ public class AnimActivity extends AppCompatActivity {
         return sortedMap;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        breakingProject = Application.getBreakingProject();
+        averagePayment = Application.getAveragePayment();
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        breakingProject = Application.getBreakingProject();
+        averagePayment = Application.getAveragePayment();
+    }
+
+    public void seedAdd (String org) {
+        // select the correct seed
+        if (org == null) {
+            // activity doesn't come from donation
+        } else {
+            switch (org) {
+                case "Amnesty International":
+                    break;
+                case "UNICEF":
+                    break;
+                case "Medecins Sans Frontieres":
+                    break;
+                default:    //doNothing or default flower
+                    break;
+            }
+        }
+    }
 }

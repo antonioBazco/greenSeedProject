@@ -30,6 +30,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
         android:layout_below="@id/login_button"
         android:text="@string/signup"
         android:background="@drawable/customshape" />

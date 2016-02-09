@@ -133,7 +133,7 @@
             android:scaleX="0.2"
             android:layout_marginTop="100dp"
             android:layout_marginStart="-80dp"
-            android:onClick="goToDonate" />
+            android:onClick="fastDonation" />
 
         <!-- air balloon
         <ImageView
