@@ -676,8 +676,16 @@ public class AnimActivity extends AppCompatActivity {
                     if (projects != null) {
                         projectList = projects;
                         randomPosition = rand.nextInt(projectList.size());
+                        boolean skip = false;
+                        while (!skip) {
+                            breakingProject = projectList.get(randomPosition);
+                            if (breakingProject.getOrganization().getName().equals("Amnesty International")) {
+                                skip = true;
+                            } else {
+                                randomPosition = rand.nextInt(projectList.size());
+                            }
+                        }
 
-                        breakingProject = projectList.get(randomPosition);
                         Application.saveBreakingProject(breakingProject);
 
                         //get user payments
@@ -755,7 +763,7 @@ public class AnimActivity extends AppCompatActivity {
     }
 
     public static <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(Map<K,V> map){
-        List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
+        List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K, V>>(map.entrySet());
         Collections.sort(entries, new Comparator<Map.Entry<K, V>>() {
             @Override
             public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {

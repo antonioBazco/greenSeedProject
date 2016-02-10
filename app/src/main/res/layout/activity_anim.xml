@@ -207,7 +207,7 @@
             android:layout_height="wrap_content"
             android:scaleY="0.5"
             android:scaleX="0.5"
-            android:layout_marginLeft="320dp"
+            android:layout_marginLeft="260dp"
             android:layout_marginTop="400dp"
             android:visibility="invisible"/>
 
@@ -221,8 +221,8 @@
             android:layout_height="wrap_content"
             android:scaleY="0.5"
             android:scaleX="0.5"
-            android:layout_marginLeft="320dp"
-            android:layout_marginTop="440dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="420dp"
             android:visibility="invisible" />
 
 
@@ -235,8 +235,8 @@
             android:layout_height="wrap_content"
             android:scaleY="0.5"
             android:scaleX="0.5"
-            android:layout_marginStart="320dp"
-            android:layout_marginTop="480dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="440dp"
             android:visibility="invisible" />
 
         <ImageView
