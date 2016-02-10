@@ -1,7 +1,9 @@
 package greenseed.eurecom.fr.greenseed;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -24,6 +26,8 @@ public class SignUpActivity extends Activity {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private EditText passwordAgainEditText;
+    private EditText emailEditText;
+    private EditText emailAgainEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,19 @@ public class SignUpActivity extends Activity {
         passwordEditText = (EditText) findViewById(R.id.password_edit_text);
         passwordAgainEditText = (EditText) findViewById(R.id.password_again_edit_text);
         passwordAgainEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == R.id.edittext_action_signup ||
+                        actionId == EditorInfo.IME_ACTION_UNSPECIFIED) {
+                    signup();
+                    return true;
+                }
+                return false;
+            }
+        });
+        emailEditText = (EditText) findViewById(R.id.email_edit_text);
+        emailAgainEditText = (EditText) findViewById(R.id.email_again_edit_text);
+        emailAgainEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == R.id.edittext_action_signup ||
@@ -61,6 +78,8 @@ public class SignUpActivity extends Activity {
         String username = usernameEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
         String passwordAgain = passwordAgainEditText.getText().toString().trim();
+        String email = emailEditText.getText().toString().trim();
+        String emailAgain = emailAgainEditText.getText().toString().trim();
 
         // Validate the sign up data
         boolean validationError = false;
@@ -87,6 +106,23 @@ public class SignUpActivity extends Activity {
             validationError = true;
             validationErrorMessage.append(getString(R.string.error_mismatched_passwords));
         }
+        if (email.length() == 0) {
+            if (validationError) {
+                validationErrorMessage.append(getString(R.string.error_join));
+            }
+            validationError = true;
+            validationErrorMessage.append(getString(R.string.error_null_email));
+        }
+        if (!email.equals(emailAgain)) {
+            if (validationError) {
+                validationErrorMessage.append(getString(R.string.error_join));
+            }
+            validationError = true;
+            validationErrorMessage.append(getString(R.string.error_mismatched_emails));
+        }
+
+
+
         validationErrorMessage.append(getString(R.string.error_end));
 
         // If there is a validation error, display the error
@@ -105,6 +141,7 @@ public class SignUpActivity extends Activity {
         ParseUser user = new ParseUser();
         user.setUsername(username);
         user.setPassword(password);
+        user.setEmail(email);
 
         // Call the Parse signup method
         user.signUpInBackground(new SignUpCallback() {
@@ -116,10 +153,12 @@ public class SignUpActivity extends Activity {
                     Toast.makeText(SignUpActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 } else {
                     // Start an intent for the dispatch activity
-                    Toast.makeText(SignUpActivity.this, "Welcome to a best future", Toast.LENGTH_LONG).show();
+                    // User needs to verify email address before continuing
+//                    Toast.makeText(SignUpActivity.this, "Welcome to a best future", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(SignUpActivity.this, DispatchActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+
                 }
             }
         });

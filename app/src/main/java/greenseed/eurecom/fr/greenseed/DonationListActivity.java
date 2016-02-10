@@ -67,14 +67,13 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
     }
 
     public void updateData(){
-
-
         ParseQuery<Organization> query = ParseQuery.getQuery(Organization.class);
         query.findInBackground(new FindCallback<Organization>() {
 
             @Override
             public void done(List<Organization> organizations, ParseException error) {
                 if (organizations != null) {
+                    Application.saveOrgList(organizations);
                     mAdapter.clear();
                     mAdapter.addAll(organizations);
                 }
@@ -123,5 +122,39 @@ public class DonationListActivity extends AppCompatActivity  implements AdapterV
                         }
                 )
                 .show();
+    }
+
+    public void onResume() {
+        super.onResume();
+        if (Application.getOrgList() != null) {
+            mAdapter = new OrganizationAdapter(this, new ArrayList<Organization>());
+
+            mListView = (ListView) findViewById(R.id.organization_list);
+            mListView.setAdapter(mAdapter);
+            mListView.setOnItemClickListener(this);
+            mListView.setTextFilterEnabled(true);
+
+            mAdapter.clear();
+            mAdapter.addAll(Application.getOrgList());
+        } else  {
+            updateData();
+        }
+    }
+
+    public void onRestart() {
+        super.onRestart();
+        if (Application.getOrgList() != null) {
+            mAdapter = new OrganizationAdapter(this, new ArrayList<Organization>());
+
+            mListView = (ListView) findViewById(R.id.organization_list);
+            mListView.setAdapter(mAdapter);
+            mListView.setOnItemClickListener(this);
+            mListView.setTextFilterEnabled(true);
+
+            mAdapter.clear();
+            mAdapter.addAll(Application.getOrgList());
+        } else  {
+            updateData();
+        }
     }
 }

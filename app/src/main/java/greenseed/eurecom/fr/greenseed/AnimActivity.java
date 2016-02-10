@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -524,14 +525,19 @@ public class AnimActivity extends AppCompatActivity {
     }
 
     public void fastDonation(View v) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Project: " + breakingProject.getName() + ". Org: " + breakingProject.getOrganization().getName() + ". Type quantity (€)");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.ThemeDialogCustom);
+        builder.setTitle("Project: " + breakingProject.getName() + ". Org: " + breakingProject.getOrganization().getName() + ". Type quantity (€)\n");
 
         // Set up the input
         final EditText input = new EditText(this);
+        input.setBackgroundColor(Color.parseColor("#B2EC5D"));//F4F9EE
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         input.setText(""+String.valueOf(averagePayment));
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        input.setTop(10);
+        input.setLeft(30);
+        input.setPadding(2, 10, 2, 10);
+        input.setGravity(Gravity.CENTER);
         builder.setView(input);
 
         // Set up the buttons
@@ -579,13 +585,14 @@ public class AnimActivity extends AppCompatActivity {
 
     private void openOptionsHelpDialog(String name, String info)
     {
-        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        AlertDialog.Builder adb = new AlertDialog.Builder(this,R.style.ThemeDialogCustom);
         LayoutInflater adbInflater = LayoutInflater.from(this);
         View eulaLayout = adbInflater.inflate(R.layout.checkbox, null);
+//        eulaLayout.setBackgroundColor(Color.parseColor("#B2EC5D"));//F4F9EE
         dontShowAgain = (CheckBox)eulaLayout.findViewById(R.id.skip);
         adb.setView(eulaLayout);
-        adb.setTitle(name);
-        adb.setMessage(info);
+        adb.setTitle(name + "\n");
+        adb.setMessage(info +"\n");
 
         adb.setPositiveButton("Share",
                 new DialogInterface.OnClickListener() {

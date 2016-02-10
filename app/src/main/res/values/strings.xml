@@ -1,6 +1,6 @@
 <resources>
     <string name="globalState">globalState</string>
-    <string name="app_name">GreenSeed</string>
+    <string name="app_name">GrowthAid</string>
     <string name="action_settings">Settings</string>
     <string name="login">Log in</string>
     <string name="signup">Sign up</string>
@@ -35,6 +35,13 @@
     <string name="title_activity_setting">settingActivity</string>
 
     <string name="fbquestion">Ask for sharing on Facebook</string>
+    <string name="fbquestion2">Share</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="save_settings">Save \nSettings</string>
+    <string name="change_username">Change your user name: </string>
+    <string name="change_password">Change your password: </string>
+    <string name="write_password">Introduce your current password: </string>
+
 
 
     <!--<string name="title_activity_settings">Settings</string>-->

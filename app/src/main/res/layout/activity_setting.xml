@@ -2,8 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SettingActivity" >
 
-    <!-- Login form -->
-
     <ScrollView
         android:id="@+id/setting_form"
         android:layout_width="match_parent"
@@ -11,17 +9,40 @@
 
         <LinearLayout
             style="@style/LoginFormContainer"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/username_edit_text"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/change_username"
+                    android:id="@+id/textView" />
+
+                <EditText
+                    android:id="@+id/username_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/prompt_username"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:backgroundTint="#B2EC5D" />
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/change_password"
+                android:id="@+id/textViewPassword"
+                android:backgroundTint="#B2EC5D"/>
 
             <EditText
                 android:id="@+id/password_edit_text"
@@ -37,6 +58,7 @@
                 android:id="@+id/password_again_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="35sp"
                 android:hint="@string/prompt_password_again"
                 android:inputType="textPassword"
                 android:maxLines="1"
@@ -46,16 +68,7 @@
                 android:imeOptions="actionUnspecified"
                 android:backgroundTint="#B2EC5D" />
 
-            <Button
-                android:id="@+id/action_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="32dp"
-                android:paddingRight="32dp"
-                android:text="@string/signup"
-                android:background="@drawable/customshape"/>
+
 
             <CheckBox
                 android:id="@+id/sharing_checkbox"
@@ -68,6 +81,47 @@
                 android:paddingTop="10dp"
                 android:text="@string/fbquestion"
                 android:background="@drawable/customshape"/>
+
+            <CheckBox
+                android:id="@+id/sharingDef_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="@string/fbquestion2"
+                android:background="@drawable/customshape"/>
+
+            <Button
+                android:id="@+id/payment_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="10dp"
+                android:text="@string/payment_method"
+                android:onClick="showMethods"
+                android:background="@drawable/customshape"/>
+
+            <Button
+                android:id="@+id/ok_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save_settings"
+                android:layout_gravity="end"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:onClick="saveSettings"
+                android:background="@drawable/customshape"/>
+                <!--android:textSize="14sp"-->
+
+
 
         </LinearLayout>
     </ScrollView>

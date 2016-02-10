@@ -15,6 +15,7 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +69,7 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        String idOrg;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_list);
 
@@ -77,6 +78,16 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
         ParseObject.registerSubclass(Payment.class);
 
         mProjectAdapter = new ProjectAdapter(this, new ArrayList<Project>());
+
+        Bundle b = getIntent().getExtras();
+        if (b != null) {
+            idOrg = b.getString("key");
+        } else {
+            idOrg = ".";
+        }
+
+        prefs = getSharedPreferences("myPreferences", Context.MODE_PRIVATE);
+        editor = prefs.edit();
 
         mListView = (ListView) findViewById(R.id.project_list);
         mListView.setAdapter(mProjectAdapter);
@@ -100,15 +111,28 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
             }
         });
 
-        prefs = getSharedPreferences("myPreferences", Context.MODE_PRIVATE);
-        editor = prefs.edit();
+        if (b != null) {
+            ParseQuery innerQuery = new ParseQuery("Organization");
+            innerQuery.whereEqualTo("objectId", idOrg);
 
-        // download the projects
-        projectList = Application.getList();
-        averagePayment = Application.getAveragePayment();
+            ParseQuery query = new ParseQuery("Project");
+            query.whereMatchesQuery("organization", innerQuery);
+            query.findInBackground(new FindCallback<Project>() {
+                @Override
+                public void done(List<Project> projects, ParseException e) {
+                    if (projects != null) {
+                        mProjectAdapter.clear();
+                        mProjectAdapter.addAll(projects);
+                    }
+                }
+            });
+        } else {
+            projectList = Application.getList();
+            averagePayment = Application.getAveragePayment();
 
-        mProjectAdapter.clear();
-        mProjectAdapter.addAll(projectList);
+            mProjectAdapter.clear();
+            mProjectAdapter.addAll(projectList);
+        }
     }
 
     @Override
@@ -126,6 +150,9 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         input.setText("" + String.valueOf(averagePayment));
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        input.setTop(10);
+        input.setPadding(2, 10, 2, 10);
+        input.setGravity(Gravity.CENTER);
         builder.setView(input);
 
         // Set up the buttons
@@ -181,7 +208,7 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
     private void openOptionsHelpDialog(String name, String info)
     {
 
-        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        AlertDialog.Builder adb = new AlertDialog.Builder(this,R.style.ThemeDialogCustom);
         LayoutInflater adbInflater = LayoutInflater.from(this);
         LinearLayout eulaLayout = (LinearLayout)adbInflater.inflate(R.layout.checkbox, null);
         dontShowAgain = (CheckBox)eulaLayout.findViewById(R.id.skip);
@@ -263,25 +290,3 @@ public class ProjectListActivity extends AppCompatActivity  implements AdapterVi
     }
 }
 
-//LayoutInflater inflater = getLayoutInflater();
-//View view = inflater.inflate(R.layout.paypal,
-//        (ViewGroup) findViewById(R.id.relativeLayout1));
-//
-//AlertDialog.Builder paypal = new AlertDialog.Builder(this);
-//paypal.setView(view);
-//        paypal.setPositiveButton("Pay",
-//        new DialogInterface.OnClickListener() {
-//@Override
-//public void onClick(DialogInterface dialog, int which) {
-//        String name = getString(R.string.donation_confirmation);
-//        String info = getString(R.string.sharing_question_1) +  payment.get("value") + getString(R.string.sharing_question_2);
-//        openOptionsHelpDialog(name, info);
-//        }
-//        }
-//        );
-//        AlertDialog dialogPaypal = paypal.create();
-//        dialogPaypal.show();
-//
-//        Button b = dialogPaypal.getButton(DialogInterface.BUTTON_POSITIVE);
-//        if(b != null)
-//        b.setTextColor(Color.parseColor("#66CC00"));

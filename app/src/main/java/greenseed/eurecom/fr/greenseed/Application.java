@@ -15,7 +15,7 @@ public class Application extends android.app.Application {
     public static final boolean APPDEBUG = false;
 
     // Debugging tag for the application
-    public static final String APPTAG = "GreenSeed";
+    public static final String APPTAG = "GrowthAid";
 
     private static SharedPreferences preferences;
 
@@ -23,13 +23,12 @@ public class Application extends android.app.Application {
 
     private static List<Project> savedProjects;
 
+    private static List<Organization> savedOrgs;
+
     private static int averagePayment;
 
     private static Project breakingProject;
 
-    public static boolean askAgain;
-
-    public static boolean shareDefault;
 
     public Application() {}
 
@@ -49,6 +48,14 @@ public class Application extends android.app.Application {
 
     public static ConfigHelper getConfigHelper() {
         return configHelper;
+    }
+
+    public static List<Organization> getOrgList() {
+        return savedOrgs;
+    }
+
+    public static void saveOrgList(List<Organization> Orgs) {
+        savedOrgs = Orgs;
     }
 
     public static List<Project> getList() {
@@ -75,20 +82,6 @@ public class Application extends android.app.Application {
         return breakingProject;
     }
 
-    public static void setAskAgain(boolean askAgain1) {
-        askAgain = askAgain1;
-    }
 
-    public static boolean getAskAgain(){
-        return askAgain;
-    }
-
-    public static void setShareDefault(boolean shareDefault1) {
-        shareDefault = shareDefault1;
-    }
-
-    public static boolean getShareDefault(){
-        return shareDefault;
-    }
 
 }

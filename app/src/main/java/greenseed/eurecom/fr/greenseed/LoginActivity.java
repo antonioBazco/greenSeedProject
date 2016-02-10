@@ -1,9 +1,14 @@
 package greenseed.eurecom.fr.greenseed;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -15,6 +20,7 @@ import android.widget.Toast;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 /**
  * Activity which displays a login screen to the user, offering registration as well.
@@ -50,6 +56,33 @@ public class LoginActivity extends Activity {
         actionButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 login();
+            }
+        });
+
+        Button passwordButton = (Button) findViewById(R.id.buttonEmail);
+        passwordButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this, R.style.ThemeDialogCustom);
+
+                builder.setTitle("Password recovery");
+
+                // Set up the input
+                final TextView input = new TextView(LoginActivity.this);
+//                input.setBackgroundColor(Color.parseColor("#66CC00"));//F4F9EE
+                // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+                input.setText("We have sent the new password to your email");
+                input.setPadding(15,15,15,15);
+                input.setGravity(Gravity.END);
+                builder.setView(input);
+
+                // Set up the buttons
+                builder.setPositiveButton("ACCEPT", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Saving the payment in the database
+                    }
+                });
+                builder.show();
             }
         });
     }
@@ -104,4 +137,6 @@ public class LoginActivity extends Activity {
             }
         });
     }
+
+
 }
