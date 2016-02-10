@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+
     <application
         android:name=".Application"
         android:allowBackup="true"
@@ -36,7 +37,9 @@
         <activity
             android:name=".AnimActivity"
             android:label="AnimActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
         <activity
             android:name=".DonationListActivity"
             android:theme="@style/AppTheme.NoActionBar"

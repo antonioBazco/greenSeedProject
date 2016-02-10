@@ -208,7 +208,8 @@
             android:scaleY="0.5"
             android:scaleX="0.5"
             android:layout_marginLeft="320dp"
-            android:layout_marginTop="400dp" />
+            android:layout_marginTop="400dp"
+            android:visibility="invisible"/>
 
 
         <!--seed2 -->
@@ -221,7 +222,8 @@
             android:scaleY="0.5"
             android:scaleX="0.5"
             android:layout_marginLeft="320dp"
-            android:layout_marginTop="440dp" />
+            android:layout_marginTop="440dp"
+            android:visibility="invisible" />
 
 
         <!--seed3 -->
@@ -234,7 +236,8 @@
             android:scaleY="0.5"
             android:scaleX="0.5"
             android:layout_marginStart="320dp"
-            android:layout_marginTop="480dp" />
+            android:layout_marginTop="480dp"
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/donate_button"

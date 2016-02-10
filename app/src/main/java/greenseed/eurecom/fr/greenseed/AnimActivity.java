@@ -89,10 +89,9 @@ public class AnimActivity extends AppCompatActivity {
         Intent myIntent = getIntent(); // gets the previously created intent
         String org = myIntent.getStringExtra("addSeed"); // will return "FirstKeyValue"
 
-        /*Function to add correct seed. Maybe should be at the bottom, after initialize everything*/
-        seedAdd (org);
-
         setContentView(R.layout.activity_anim);
+
+
 
         //things changed
         ParseObject.registerSubclass(Organization.class);
@@ -158,6 +157,11 @@ public class AnimActivity extends AppCompatActivity {
         msfSeedView = (ImageView) findViewById(R.id.msf_seed);
         unicefSeedView = (ImageView) findViewById(R.id.unicef_seed);
 
+
+        /*Function to add correct seed. Maybe should be at the bottom, after initialize everything*/
+        seedAdd(org);
+
+
         plantingGroundView = (ImageView) findViewById(R.id.planting_ground);
 
 
@@ -170,7 +174,6 @@ public class AnimActivity extends AppCompatActivity {
 
                         ClipData dragData = new ClipData(v.getTag().toString(), mimeTypes, item);
                         View.DragShadowBuilder myShadow = new View.DragShadowBuilder(amnestySeedView);
-
                         v.startDrag(dragData, myShadow, null, 0);
                         Log.d(msg, "ON LONG CLICK: Checking if event is for us " + String.valueOf(v.getId()) + "sjalabajs "
                                 + amnestySeedView.getId());
@@ -592,7 +595,7 @@ public class AnimActivity extends AppCompatActivity {
         dontShowAgain = (CheckBox)eulaLayout.findViewById(R.id.skip);
         adb.setView(eulaLayout);
         adb.setTitle(name + "\n");
-        adb.setMessage(info +"\n");
+        adb.setMessage(info + "\n");
 
         adb.setPositiveButton("Share",
                 new DialogInterface.OnClickListener() {
@@ -785,14 +788,28 @@ public class AnimActivity extends AppCompatActivity {
     public void seedAdd (String org) {
         // select the correct seed
         if (org == null) {
+            Log.d("hei:", "NULL POINTER MAN WHAT THE deuce?");
+
             // activity doesn't come from donation
         } else {
+
+            if ( org.equals("Medecins Sans Frontieres")){
+
+                Log.d("equal","equals");
+            }
+            Log.d("test: ", org);
             switch (org) {
                 case "Amnesty International":
+                    Log.d("test:", "AMNESTY SEED");
+                    amnestySeedView.setVisibility(View.VISIBLE);
                     break;
                 case "UNICEF":
+                    Log.d("test:", "UNICEF SEED");
+                    unicefSeedView.setVisibility(View.VISIBLE);
                     break;
                 case "Medecins Sans Frontieres":
+                    Log.d("test:", "MSF SEED");
+                    msfSeedView.setVisibility(View.VISIBLE);
                     break;
                 default:    //doNothing or default flower
                     break;
